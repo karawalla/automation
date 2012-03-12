@@ -1,0 +1,12 @@
+<testcase>
+  <name>Scenario1 [iter 1]</name>
+  <host>WUSCA250111-A8R</host>
+  <description>This is a sample test.</description>
+  <starttime>2/16/2012 11:08:38 AM</starttime>
+  <step>
+    <description>Test Info</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>2/16/2012 11:08:38 AM</timestamp>
+  </step>
+</testcase>

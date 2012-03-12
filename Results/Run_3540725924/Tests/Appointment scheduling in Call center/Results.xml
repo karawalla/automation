@@ -1,0 +1,229 @@
+<testcase>
+  <name>Appointment scheduling in Call center</name>
+  <host>WUSAS250451-ZHV</host>
+  <test_description>Appointment scheduling in Call center</test_description>
+  <starttime>3/12/2012 3:02:27 PM</starttime>
+  <step>
+    <description>Opening IE with url http://qaweb2.ncr.com/SSMPortalBOA_Trunk/Login.aspx</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/12/2012 3:02:30 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login Page -  Smart Lobby-LoginPage [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>76_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/12/2012 3:02:30 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin@ncr.com in UserName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>77_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/12/2012 3:02:30 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin in Password [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>78_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/12/2012 3:02:31 PM</timestamp>
+  </step>
+  <step>
+    <description>Smart Lobby Home page launched successfully Smart Lobby [Page] displayed. Validation object, Activity Monitoring [Image] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>79_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:02:40 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login View Selection Page. Smart Lobby [Page] displayed. Validation object, Frame_User Permissions [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>80_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:02:43 PM</timestamp>
+  </step>
+  <step>
+    <description>Selecting View:PLATFORM</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/12/2012 3:02:43 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to PLATFORM Smart Lobby [Page] displayed. Validation object, Frame_ActivityManager [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>81_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:02:45 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Appointment Manager Page Frame_AppointmentManager [Frame] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>82_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:02:47 PM</timestamp>
+  </step>
+  <step>
+    <description>Web Element toggled to HIDE LOCATOR</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>83_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:02:50 PM</timestamp>
+  </step>
+  <step>
+    <description>Launched Select Discussion Topic Page Step2:Select a Topic for Bank [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>84_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:03:16 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in WebCheckBox</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>85_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:03:16 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered TestComments in comments [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>86_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:03:18 PM</timestamp>
+  </step>
+  <step>
+    <description>Clicked on Continue button Step3:Select a Day and Time [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>87_Step3_Select_a_Day_and_Time_browser</snap>
+    <timestamp>3/12/2012 3:03:21 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered 75038 in zipcode [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>88_Step3_Select_a_Day_and_Time_browser</snap>
+    <timestamp>3/12/2012 3:03:21 PM</timestamp>
+  </step>
+  <step>
+    <description>Clicked on continue button on Date selection page. Step4:Contact Info for Bank [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>89_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:03:32 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered raj356 in FirstName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>90_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:03:32 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered shekar356 in LastName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>91_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:03:32 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered mouliayyala@gmail.com in Email [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>92_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:03:33 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered mouliayyala@gmail.com in ReEnterEmail [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>93_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:03:33 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered 1234567890 in ContactNumber [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>94_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:03:33 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in Both [WebCheckBox]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>95_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:03:33 PM</timestamp>
+  </step>
+  <step>
+    <description>Reminder Options - Checking both has checked both phone reminder and text message options</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>96_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:03:33 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered 1234567890 in TextMsgMobilePhone [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>97_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:03:33 PM</timestamp>
+  </step>
+  <step>
+    <description>PHONE REMINDER FIELD - Phone reminder field auto populated</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>98_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:03:34 PM</timestamp>
+  </step>
+  <step>
+    <description>Auto Check of BOTH - Both checked box has been auto checked by checking phone reminder &amp; txtMessage options</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>99_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:03:34 PM</timestamp>
+  </step>
+  <step>
+    <description>Submitted Contact Information Appointment Confirmation Page [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>100_Appointment_Confirmation_Page_browser</snap>
+    <timestamp>3/12/2012 3:03:38 PM</timestamp>
+  </step>
+  <step>
+    <description>Appointment Confirmation Page - Appointment Confirmation Page displayed Successfully</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>101_Appointment_Confirmation_Page_browser</snap>
+    <timestamp>3/12/2012 3:03:38 PM</timestamp>
+  </step>
+  <step>
+    <description>Closed Confirmation Page Smart Lobby [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>102_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:03:39 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered shekar356, raj356 in Customer [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>103_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:03:42 PM</timestamp>
+  </step>
+  <step>
+    <description>RECORD VERIFCIATION - Record has been created successfully</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>104_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:03:44 PM</timestamp>
+  </step>
+  <step>
+    <description>ResultVerification_FinalStatus - Validation Passed</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>105_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:03:45 PM</timestamp>
+  </step>
+  <endtime>3/12/2012 3:03:54 PM</endtime>
+</testcase>

@@ -1,0 +1,194 @@
+<testcase>
+  <name>Cancel Walk-in Appointment</name>
+  <host>WUSAS250451-ZHV</host>
+  <test_description>Cancel Walk-in Appointment</test_description>
+  <starttime>3/12/2012 3:44:21 PM</starttime>
+  <step>
+    <description>Opening IE with url http://qaweb2.ncr.com/SSMPortalBOA_Trunk/Login.aspx</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/12/2012 3:44:24 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login Page -  Smart Lobby-LoginPage [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>512_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/12/2012 3:44:24 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin@ncr.com in UserName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>513_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/12/2012 3:44:25 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin in Password [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>514_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/12/2012 3:44:25 PM</timestamp>
+  </step>
+  <step>
+    <description>Smart Lobby Home page launched successfully Smart Lobby [Page] displayed. Validation object, Activity Monitoring [Image] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>515_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:44:34 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login View Selection Page. Smart Lobby [Page] displayed. Validation object, Frame_User Permissions [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>516_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:44:37 PM</timestamp>
+  </step>
+  <step>
+    <description>Selecting View:LOBBY</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/12/2012 3:44:37 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to LOBBY Smart Lobby [Page] displayed. Validation object, Frame_ActivityManager [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>517_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:44:39 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Activity Monitoring Page Frame_ActivityManager [Frame] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>518_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:44:42 PM</timestamp>
+  </step>
+  <step>
+    <description>Web Element toggled to HIDE LOCATOR</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>519_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:44:44 PM</timestamp>
+  </step>
+  <step>
+    <description>Launched Discussion Topic Page Step2:Select a Topic for Bank [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>520_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:44:59 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered raj1390 in FirstName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>521_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:44:59 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered shekar1390 in LastName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>522_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:45:00 PM</timestamp>
+  </step>
+  <step>
+    <description>Selected SBB from BankingType [WebRadioGroup]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>523_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:45:00 PM</timestamp>
+  </step>
+  <step>
+    <description>Selected Yes from empno [WebRadioGroup]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>524_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:45:00 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in WebCheckBox</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>525_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:45:00 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in WebCheckBox</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>526_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:45:02 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in WebCheckBox</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>527_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:45:03 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in WebCheckBox</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>528_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:45:05 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered TestComments in comments [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>529_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:45:05 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered English in Language [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>530_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:45:05 PM</timestamp>
+  </step>
+  <step>
+    <description>Clicked on Submit Button Smart Lobby [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>531_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:45:08 PM</timestamp>
+  </step>
+  <step>
+    <description>RECORD VERIFCIATION - Record has been created successfully</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>532_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:45:11 PM</timestamp>
+  </step>
+  <step>
+    <description>ResultVerification_FinalStatus - Validation Passed</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>533_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:45:11 PM</timestamp>
+  </step>
+  <step>
+    <description>Cancel button has been clicked</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>534_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:45:13 PM</timestamp>
+  </step>
+  <step>
+    <description>Appointment has been cancelled successfully</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>535_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:45:15 PM</timestamp>
+  </step>
+  <step>
+    <description>Cancel Appointment Successfully Done</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>536_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:45:17 PM</timestamp>
+  </step>
+  <endtime>3/12/2012 3:45:26 PM</endtime>
+</testcase>

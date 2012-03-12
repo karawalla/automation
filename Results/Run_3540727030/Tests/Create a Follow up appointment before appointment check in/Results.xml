@@ -1,0 +1,451 @@
+<testcase>
+  <name>Create a Follow up appointment before appointment check in</name>
+  <host>WUSAS250451-ZHV</host>
+  <test_description>Create a Follow up appointment before appointment check in</test_description>
+  <starttime>3/12/2012 3:26:00 PM</starttime>
+  <step>
+    <description>Opening IE with url http://qaweb2.ncr.com/SSMPortalBOA_Trunk/Login.aspx</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/12/2012 3:26:03 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login Page -  Smart Lobby-LoginPage [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>200_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/12/2012 3:26:03 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin@ncr.com in UserName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>201_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/12/2012 3:26:04 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin in Password [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>202_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/12/2012 3:26:04 PM</timestamp>
+  </step>
+  <step>
+    <description>Smart Lobby Home page launched successfully Smart Lobby [Page] displayed. Validation object, Activity Monitoring [Image] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>203_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:26:14 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login View Selection Page. Smart Lobby [Page] displayed. Validation object, Frame_User Permissions [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>204_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:26:16 PM</timestamp>
+  </step>
+  <step>
+    <description>Selecting View:LOBBY</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/12/2012 3:26:16 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to LOBBY Smart Lobby [Page] displayed. Validation object, Frame_ActivityManager [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>205_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:26:19 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Activity Monitoring Page Frame_ActivityManager [Frame] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>206_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:26:21 PM</timestamp>
+  </step>
+  <step>
+    <description>Web Element toggled to HIDE LOCATOR</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>207_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:26:23 PM</timestamp>
+  </step>
+  <step>
+    <description>Launched Select Discussion Topic Page Step2:Select a Topic for Bank [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>208_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:26:45 PM</timestamp>
+  </step>
+  <step>
+    <description>Selected SBB from BankingType [WebRadioGroup]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>209_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:26:45 PM</timestamp>
+  </step>
+  <step>
+    <description>Selected Yes from empno [WebRadioGroup]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>210_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:26:45 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in WebCheckBox</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>211_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:26:45 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in WebCheckBox</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>212_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:26:48 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in WebCheckBox</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>213_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:26:48 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in WebCheckBox</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>214_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:26:50 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered TestComments in comments [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>215_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:26:51 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered English in Language [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>216_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:26:51 PM</timestamp>
+  </step>
+  <step>
+    <description>Clicked on Continue button Step3:Select a Day and Time [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>217_Step3_Select_a_Day_and_Time_browser</snap>
+    <timestamp>3/12/2012 3:26:53 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered 75038 in zipcode [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>218_Step3_Select_a_Day_and_Time_browser</snap>
+    <timestamp>3/12/2012 3:26:54 PM</timestamp>
+  </step>
+  <step>
+    <description>Calendar time updated to new time Zone Expected: 9</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/12/2012 3:26:58 PM</timestamp>
+  </step>
+  <step>
+    <description>Clicked on continue button on Date selection page. Step4:Contact Info for Bank [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>219_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:05 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered raj670 in FirstName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>220_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:05 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered shekar670 in LastName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>221_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:05 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered mouliayyala@gmail.com in Email [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>222_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:05 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered mouliayyala@gmail.com in ReEnterEmail [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>223_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:06 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered 1234567890 in ContactNumber [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>224_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:06 PM</timestamp>
+  </step>
+  <step>
+    <description>Selected Yes from ExistingCustomer [WebRadioGroup]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>225_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:06 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in Both [WebCheckBox]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>226_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:06 PM</timestamp>
+  </step>
+  <step>
+    <description>Reminder Options - Checking both has checked both phone reminder and text message options</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>227_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:06 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered 1234567890 in TextMsgMobilePhone [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>228_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:07 PM</timestamp>
+  </step>
+  <step>
+    <description>PHONE REMINDER FIELD - Phone reminder field auto populated</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>229_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:07 PM</timestamp>
+  </step>
+  <step>
+    <description>Auto Check of BOTH - Both checked box has been auto checked by checking phone reminder &amp; txtMessage options</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>230_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:07 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered Test in BusinessName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>231_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:07 PM</timestamp>
+  </step>
+  <step>
+    <description>Submitted Contact Information Appointment Confirmation Page [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>232_Appointment_Confirmation_Page_browser</snap>
+    <timestamp>3/12/2012 3:27:12 PM</timestamp>
+  </step>
+  <step>
+    <description>Appointment Confirmation Page - Appointment Confirmation Page displayed Successfully</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>233_Appointment_Confirmation_Page_browser</snap>
+    <timestamp>3/12/2012 3:27:12 PM</timestamp>
+  </step>
+  <step>
+    <description>Closed Confirmation Page Smart Lobby [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>234_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:27:13 PM</timestamp>
+  </step>
+  <step>
+    <description>RECORD VERIFCIATION - Record has been created successfully</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>235_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:27:16 PM</timestamp>
+  </step>
+  <step>
+    <description>ResultVerification_FinalStatus - Validation Passed</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>236_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:27:16 PM</timestamp>
+  </step>
+  <step>
+    <description>Launched Followup Appointment page Schedule_New_FollowUp_App [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>237_Schedule_New_FollowUp_App_browser</snap>
+    <timestamp>3/12/2012 3:27:18 PM</timestamp>
+  </step>
+  <step>
+    <description>Launched Select Discussion Topic Page Step2:Select a Topic for Bank [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>238_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:21 PM</timestamp>
+  </step>
+  <step>
+    <description>FollowUp appointment can be created</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>239_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:21 PM</timestamp>
+  </step>
+  <step>
+    <description>Launched Select Date Time page Step3:Select a Day and Time [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>240_Step3_Select_a_Day_and_Time_browser</snap>
+    <timestamp>3/12/2012 3:27:23 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered 75038 in zipcode [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>241_Step3_Select_a_Day_and_Time_browser</snap>
+    <timestamp>3/12/2012 3:27:24 PM</timestamp>
+  </step>
+  <step>
+    <description>Calendar time updated to new time Zone Expected: 9</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/12/2012 3:27:28 PM</timestamp>
+  </step>
+  <step>
+    <description>Clicked on continue button on Date selection page. Step4:Contact Info for Bank [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>242_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:34 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered raj64 in FirstName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>243_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:34 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered shekar64 in LastName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>244_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:34 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered mouliayyala@gmail.com in Email [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>245_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:35 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered mouliayyala@gmail.com in ReEnterEmail [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>246_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:35 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered 1234567890 in ContactNumber [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>247_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:35 PM</timestamp>
+  </step>
+  <step>
+    <description>Selected Yes from ExistingCustomer [WebRadioGroup]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>248_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:35 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in Both [WebCheckBox]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>249_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:35 PM</timestamp>
+  </step>
+  <step>
+    <description>Reminder Options - Checking both has checked both phone reminder and text message options</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>250_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:35 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered 1234567890 in TextMsgMobilePhone [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>251_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:36 PM</timestamp>
+  </step>
+  <step>
+    <description>PHONE REMINDER FIELD - Phone reminder field auto populated</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>252_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:36 PM</timestamp>
+  </step>
+  <step>
+    <description>Auto Check of BOTH - Both checked box has been auto checked by checking phone reminder &amp; txtMessage options</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>253_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:36 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered Test in BusinessName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>254_Step4_Contact_Info_for_Bank_browser</snap>
+    <timestamp>3/12/2012 3:27:36 PM</timestamp>
+  </step>
+  <step>
+    <description>Submitted Contact Information Appointment Confirmation Page [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>255_Appointment_Confirmation_Page_browser</snap>
+    <timestamp>3/12/2012 3:27:41 PM</timestamp>
+  </step>
+  <step>
+    <description>Appointment Confirmation Page - Appointment Confirmation Page displayed Successfully</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>256_Appointment_Confirmation_Page_browser</snap>
+    <timestamp>3/12/2012 3:27:41 PM</timestamp>
+  </step>
+  <step>
+    <description>Closed Confirmation Page Smart Lobby [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>257_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:27:42 PM</timestamp>
+  </step>
+  <step>
+    <description>RECORD VERIFCIATION - Record has been created successfully</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>258_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:27:44 PM</timestamp>
+  </step>
+  <step>
+    <description>ResultVerification_FinalStatus - Validation Passed</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>259_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 3:27:45 PM</timestamp>
+  </step>
+  <endtime>3/12/2012 3:27:54 PM</endtime>
+</testcase>
