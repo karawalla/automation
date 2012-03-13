@@ -1,0 +1,172 @@
+<testcase>
+  <name>Create a follow up appointment after call to office</name>
+  <host>WUSAS250451-ZHV</host>
+  <test_description>Create a follow up appointment after call to office</test_description>
+  <starttime>3/12/2012 9:54:05 PM</starttime>
+  <step>
+    <description>Opening IE with url http://qaweb2.ncr.com/SSMPortalBOA_Trunk/Login.aspx</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/12/2012 9:54:08 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login Page -  Smart Lobby-LoginPage [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>202_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/12/2012 9:54:09 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin@ncr.com in UserName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>203_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/12/2012 9:54:10 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin in Password [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>204_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/12/2012 9:54:10 PM</timestamp>
+  </step>
+  <step>
+    <description>Smart Lobby Home page launched successfully Smart Lobby [Page] displayed. Validation object, Activity Monitoring [Image] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>205_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 9:54:20 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login View Selection Page. Smart Lobby [Page] displayed. Validation object, Frame_User Permissions [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>206_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 9:54:22 PM</timestamp>
+  </step>
+  <step>
+    <description>Selecting View:LOBBY</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/12/2012 9:54:22 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to LOBBY Smart Lobby [Page] displayed. Validation object, Frame_ActivityManager [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>207_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 9:54:25 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Activity Monitoring Page Frame_ActivityManager [Frame] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>208_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 9:54:27 PM</timestamp>
+  </step>
+  <step>
+    <description>Web Element toggled to HIDE LOCATOR</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>209_Smart_Lobby_browser</snap>
+    <timestamp>3/12/2012 9:54:30 PM</timestamp>
+  </step>
+  <step>
+    <description>Launched Select Discussion Topic Page Step2:Select a Topic for Bank [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>210_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 9:54:47 PM</timestamp>
+  </step>
+  <step>
+    <description>Selected SBB from BankingType [WebRadioGroup]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>211_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 9:54:47 PM</timestamp>
+  </step>
+  <step>
+    <description>Selected Yes from empno [WebRadioGroup]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>212_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 9:54:47 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in WebCheckBox</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>213_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 9:54:47 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in WebCheckBox</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>214_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 9:54:50 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in WebCheckBox</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>215_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 9:54:50 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in WebCheckBox</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>216_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 9:54:52 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered TestComments in comments [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>217_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 9:54:53 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered English in Language [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>218_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/12/2012 9:54:53 PM</timestamp>
+  </step>
+  <step>
+    <description>Clicked on Continue button Step3:Select a Day and Time [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>219_Step3_Select_a_Day_and_Time_browser</snap>
+    <timestamp>3/12/2012 9:54:55 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered 75038 in zipcode [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>220_Step3_Select_a_Day_and_Time_browser</snap>
+    <timestamp>3/12/2012 9:54:56 PM</timestamp>
+  </step>
+  <step>
+    <description>Calendar time updated to new time Zone Expected: 9</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/12/2012 9:55:00 PM</timestamp>
+  </step>
+  <step>
+    <description>Current Calender displayed has today's date option</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>221_Step3_Select_a_Day_and_Time_browser</snap>
+    <timestamp>3/12/2012 9:55:00 PM</timestamp>
+  </step>
+  <step>
+    <description>Fatal Error: Appointment slots are not available forTODAY Aborting Test Case.</description>
+    <msgstatus>5</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>222_Step3_Select_a_Day_and_Time_browser</snap>
+    <timestamp>3/12/2012 9:55:00 PM</timestamp>
+  </step>
+  <endtime>3/12/2012 9:55:13 PM</endtime>
+</testcase>
