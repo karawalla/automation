@@ -1,0 +1,166 @@
+<testcase>
+  <name>Creating an Walk-in appointment in Branch</name>
+  <host>SEZ05VVM-701</host>
+  <test_description>Creating an Walk-in appointment in Branch</test_description>
+  <starttime>3/13/2012 7:11:18 PM</starttime>
+  <step>
+    <description>Opening IE with url http://qaweb2.ncr.com/SSMPortalBOA_Trunk/Login.aspx</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/13/2012 7:11:25 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login Page -  Smart Lobby-LoginPage [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>0_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/13/2012 7:11:25 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin@ncr.com in UserName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>1_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/13/2012 7:11:32 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin in Password [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>2_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/13/2012 7:11:32 PM</timestamp>
+  </step>
+  <step>
+    <description>Smart Lobby Home page launched successfully Smart Lobby [Page] displayed. Validation object, Activity Monitoring [Image] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>3_Smart_Lobby_browser</snap>
+    <timestamp>3/13/2012 7:11:37 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login View Selection Page. Smart Lobby [Page] displayed. Validation object, Frame_User Permissions [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>4_Smart_Lobby_browser</snap>
+    <timestamp>3/13/2012 7:11:39 PM</timestamp>
+  </step>
+  <step>
+    <description>Selecting View:LOBBY</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/13/2012 7:11:39 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to LOBBY Smart Lobby [Page] displayed. Validation object, Frame_ActivityManager [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>5_Smart_Lobby_browser</snap>
+    <timestamp>3/13/2012 7:11:42 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Activity Monitoring Page Frame_ActivityManager [Frame] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>6_Smart_Lobby_browser</snap>
+    <timestamp>3/13/2012 7:11:45 PM</timestamp>
+  </step>
+  <step>
+    <description>Web Element toggled to HIDE LOCATOR</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>7_Smart_Lobby_browser</snap>
+    <timestamp>3/13/2012 7:11:47 PM</timestamp>
+  </step>
+  <step>
+    <description>Launched Discussion Topic Page Step2:Select a Topic for Bank [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>8_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/13/2012 7:12:07 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered raj228 in FirstName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>9_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/13/2012 7:12:08 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered shekar228 in LastName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>10_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/13/2012 7:12:09 PM</timestamp>
+  </step>
+  <step>
+    <description>Selected SBB from BankingType [WebRadioGroup]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>11_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/13/2012 7:12:10 PM</timestamp>
+  </step>
+  <step>
+    <description>Selected Yes from empno [WebRadioGroup]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>12_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/13/2012 7:12:10 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in WebCheckBox</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>13_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/13/2012 7:12:11 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in WebCheckBox</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>14_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/13/2012 7:12:14 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in WebCheckBox</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>15_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/13/2012 7:12:14 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ON in WebCheckBox</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>16_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/13/2012 7:12:17 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered TestComments in comments [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>17_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/13/2012 7:12:18 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered English in Language [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>18_Step2_Select_a_Topic_for_Bank_browser</snap>
+    <timestamp>3/13/2012 7:12:18 PM</timestamp>
+  </step>
+  <step>
+    <description>Clicked on Submit Button Smart Lobby [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>19_Smart_Lobby_browser</snap>
+    <timestamp>3/13/2012 7:12:21 PM</timestamp>
+  </step>
+  <step>
+    <description>Fatal Error: Newly created customer shekar228, raj228 was not found in appointment grid. Aborting Test Case.</description>
+    <msgstatus>5</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>20_Smart_Lobby_browser</snap>
+    <timestamp>3/13/2012 7:12:24 PM</timestamp>
+  </step>
+  <endtime>3/13/2012 7:12:28 PM</endtime>
+</testcase>
