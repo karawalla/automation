@@ -1,9 +1,0 @@
-<Tests>
-<Test>Appointment Scheduling in Branch</Test>
-<Test>Appointment scheduling in Call center</Test>
-<Test>Check whether the appointments are moved to complete tab once the appointments are service completed</Test>
-<Test>Create a follow up appointment after appointment check in</Test>
-<Test>Create a Follow up appointment before appointment check in</Test>
-<Test>Creating an Walk-in appointment in Branch</Test>
-<Test>Rescheduling the appointment</Test>
-</Tests>

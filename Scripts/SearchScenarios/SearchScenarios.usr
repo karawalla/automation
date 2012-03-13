@@ -36,10 +36,12 @@ Version=11.00
 
 [TulipAddins]
 Database=
+Java=
 Windows Applications=
 TEA=
 Web=
 .NET=
+WPF=
 XML=
 
 [ExtraFiles]
