@@ -105,7 +105,6 @@ Public Function addUser()
 	End If
 End Function
 
-
 Public Function verifyUserData()
    Set DESC_OBJ = Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").WbfGrid("UserDataGrid")
 	   rCount = DESC_OBJ.RowCount
