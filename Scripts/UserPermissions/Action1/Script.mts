@@ -20,14 +20,15 @@ moduleName = DataTable.Value("Module",Global)
 
 'set workFlow
 'workFlow = DataTable.Value("WorkFlow", Global)
+
 'setCurrentWorkFlow workFlow
-userFirstName = "Chandra"
-userLastName = "Mouli"
-userEmailID = "mouliayyala@gmail.com"
-caid = "Test@123"
-JobRole = "Assistant Manager"
-userRoles = Array("Access Administrator")
-tabOption = "USERS"
+userFirstName = DataTable.Value("UserFirstName",Global)
+userLastName = DataTable.Value("UserLastName",Global)
+userEmailID = DataTable.Value("UserEmailID",Global)
+caid =DataTable.Value("Caid",Global)
+JobRole = DataTable.Value("JobRole",Global)
+userRole = DataTable.Value("UserRole",Global)
+tabOption = DataTable.Value("TabOption",Global)
 
 addToUserInfo "DT_UserFirstName",userFirstName
 addToUserInfo "DT_UserLastName", userLastName
@@ -41,124 +42,128 @@ setCurrentView viewName
 setCurrentModule moduleName
 addToCache "DT_Location",locationtype
 '*************************************************************
-'schedulerLogin userName,password
-'goToLoginView viewName
-'goToModule moduleName
+schedulerLogin userName,password
+goToLoginView viewName
+goToModule moduleName
 'selectBranch  branchType, branchName
 
 addUser
+verifyUserData
+goToEditUser
+EditUserLocation("Arboretum")
+
 'Function Name : AddUser
 Public Function addUser()
 	appendNum = RandomNumber(100,200)
 	addToCache "DT_RandomNum",appendNum
 	If Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").Link("Add User").Exist(1) Then
-		Select Case retrieveFromCache("DT_TabOption")
-			Case "USERS"
+		Select Case retrieveFromUserInfo("DT_TabOption")
+			Case TAB_USERS
 				Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").Link("Tab_Users").Click
-			Case "ACCESSADMIN"
+			Case TAB_ACCESSADMIN
 				Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").Link("Tab_AccessAdmin").Click
 		End Select
 		Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").Link("Add User").Click
 		CustomSync Browser("AddEditUser").Page("AddEditUser"), False, "Add User page launched"
 		'Enter User Information
-		Browser("AddEditUser").Page("AddEditUser").WebEdit("UserFirstName").Set(userFirstName & appendNum)
-		Browser("AddEditUser").Page("AddEditUser").WebEdit("UserLastName").Set(userFirstName & appendNum)
+		Browser("AddEditUser").Page("AddEditUser").WebEdit("UserFirstName").Set userFirstName & appendNum
+		Browser("AddEditUser").Page("AddEditUser").WebEdit("UserLastName").Set userLastName & appendNum
 		Browser("AddEditUser").Page("AddEditUser").WebEdit("TxtEmail").Set userEmailID
-		'Append Random number to CAID
-		caid = caid	& appendNum
-		Browser("AddEditUser").Page("AddEditUser").WebEdit("CAID").Set caid
+		Browser("AddEditUser").Page("AddEditUser").WebEdit("CAID").Set caid	& appendNum
+
 		'List Box to select JobRole
 		Browser("AddEditUser").Page("AddEditUser").WebEdit("txtJobRole").Click
 		Browser("AddEditUser").Page("AddEditUser").WebList("List_JobRoles").Select jobRole
 		Browser("AddEditUser").Page("AddEditUser").WebList("List_JobRoles").Click
 		jobCode = Browser("AddEditUser").Page("AddEditUser").WebElement("JobCode").GetROProperty("innertext")
 		addToCache "DT_JobCode", jobCode
-		'Add all user gropus mentioned
-		For Each group in userRoles
-			Browser("AddEditUser").Page("AddEditUser").WebList("LstAvailableGroups").Select group
+
+		If  userRole <>"" AND Not isEmpty(userRole)Then
+			Browser("AddEditUser").Page("AddEditUser").WebList("LstAvailableGroups").Select userRole
 			Browser("AddEditUser").Page("AddEditUser").WebButton(">").Click
 			count1 = Browser("AddEditUser").Page("AddEditUser").WebList("LstAssignedGroups").GetROProperty("items count")
-			If  Browser("AddEditUser").Page("AddEditUser").WebList("LstAssignedGroups").GetItem(count1) = group Then
+			If  Browser("AddEditUser").Page("AddEditUser").WebList("LstAssignedGroups").GetItem(count1) = userRole Then
 				logPass "USER GROUP - Selected User Group has been added successfully"
 			End If
-		Next
+			Else
+				logFail "USER GROUP - User Group cannot be Empty.Please recheck input data"
+		End If
 		Browser("AddEditUser").Page("AddEditUser").Link("SaveUser").Click
 		'Check whether Add user has given any errors or not
-		If Dialog("text:=Message from webpage").Exist(10) Then
-			chdObj = Dialog("text:=Message from webpage").ChildObjects
-			ERR_MSG = chdObj(2).GetRoProperty("text")				
+		If Dialog("text:=Message from webpage").Exist(1) Then
+			myObj = Description.Create
+			myObj("micclass").Value = "Static"
+			chdObj = Dialog("text:=Message from webpage").ChildObjects(myObj)
+			ERR_MSG = chdObj(1).GetRoProperty("text")	
 			logFail "ADD USER DETAILS- " & "Err msg" & ERR_MSG
 		ElseIf Browser("AddEditUser").Page("AddEditUser").WebElement("CAID currently exists.").Exist(1) Then
 			logFail "ADD USER - CAID already exists"
 		End If
-		'Add User -Date Added Column verification Data
-		currTime = FormatDateTime(Time(),4)
-		Select Case(systemTimeZone)
-			Case CENTRAL_TIME_ZONE
-				DataTable.Value("DateAdded","USERDATA") = Date() &" " & Replace(currTime,Hour(currTime)&":",Hour(currTime)+1&":")				
-			Case EASTERN_TIME_ZONE
-				DataTable.Value("DateAdded","USERDATA") = expected_DateAdded			
-			Case MOUNTAIN_TIME_ZONE
-				DataTable.Value("DateAdded","USERDATA") = DateAdd("h",2,expected_DateAdded)			
-			Case systemTimeZone = PACIFIC_TIME_ZONE
-				DataTable.Value("DateAdded","USERDATA") = DateAdd("h",3,expected_DateAdded)
-			Case Else
-				logFail "System Time Zone - Not in US Format.Add sytem time zone format to select case for validation"
-			End Select
+		CustomSync Browser("Smart Lobby").Page("Smart Lobby"), False, "Add User page successfully closed"
 	Else
 		logFatal "Add User tab is not available - Check the application workflow"
 	End If
 End Function
-'################################################
-'Function Name : Check_And_AddUser
-' # Purpose: To Add new user with the define role
-'################################################
-Public Function checkAndAddUser(userFirstName, userLastName)
-   Browser("Smart Lobby").Page("Smart Lobby").Image("Users Manager").Click
+
+
+Public Function verifyUserData()
    Set DESC_OBJ = Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").WbfGrid("UserDataGrid")
-	rCount = DESC_OBJ.RowCount
-	cCount = DESC_OBJ.ColumnCount(1)
-	isFound =False
-	For i=2 to rCount
-		record_Fullname = DESC_OBJ.GetCellData(i,1)
-		If  record_Fullname = userFirstName & " " & userLastName Then
-			isFound =True
-			Exit For
+	   rCount = DESC_OBJ.RowCount
+	   cCount = DESC_OBJ.ColumnCount(1)
+		isFound =False
+		Select Case retrieveFromUserInfo("DT_TabOption")
+			Case TAB_USERS
+				For i=2 to rCount
+					If UCase(DESC_OBJ.GetCellData(i,1)) = UCase(retrieveFromUserInfo("DT_UserFirstName")) & retrieveFromCache("DT_RandomNum") & _
+						" " & UCase(retrieveFromUserInfo("DT_UserLastName")) & retrieveFromCache("DT_RandomNum") AND _
+						UCase(DESC_OBJ.GetCellData(i,2)) = UCase(retrieveFromUserInfo("DT_UserEmail")) Then
+							DESC_OBJ.Object.Rows(i-1).Click
+							logPass "Add User -Verified and record has been created successfully"
+							isFound = True
+							Exit For
+					End If
+				Next
+			Case TAB_ACCESSADMIN
+				For i=2 to rCount
+					If UCase(DESC_OBJ.GetCellData(i,1)) = UCase(retrieveFromUserInfo("DT_UserFirstName")) & " " & UCase(retrieveFromUserInfo("DT_UserLastName")) AND _
+						UCase(DESC_OBJ.GetCellData(i,2)) = UCase(retrieveFromUserInfo("DT_UserCAID")) &retrieveFromCache("DT_RandomNum") AND _
+						UCase(DESC_OBJ.GetCellData(i,3)) = UCase(retrieveFromUserInfo("DT_UserEmail"))Then
+							DESC_OBJ.Object.Rows(i-1).Click
+							logPass "Add User -Verified and record has been created successfully"
+							isFound = True
+							Exit For
+					End If
+				Next
+		End Select				
+		If isFound =False Then
+			logFail "Add User -Verified and no record found"
 		End If
-	Next
-	If isFound = False Then
-		'To Do - Check workflows and add functionality accordingly
-		Call addUser()
-	End If
 End Function
 
-'#  FunctionName : Launch_EditUser
 Public Function goToEditUser()
 		If Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").Link("Edit User").Exist(1) Then
 			Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").Link("Edit User").Click
-			CustomeSync Browser("AddEditUser").Page("AddEditUser") , False, "Edit User page has been launched"
 			'To check user has been selected or not
 			If Dialog("text:=Message from webpage").Exist(1) Then
 				logFail "Please select user to Edit - User has not been selected for Edit"
 			Else
-				Browser("AddEditUser").Page("AddEditUser").UDF_Init
+			CustomSync Browser("AddEditUser").Page("AddEditUser") , False, "Edit User page has been launched"
 			End If
 			'To check whether Edit user page has been launched or not
-			If Browser("AddEditUser").Page("AddEditUser").Exist(1) Then
-				logPass "Edit User Page has been launched successfully"
-			End If
-		End If	
+'			If Browser("AddEditUser").Page("AddEditUser").Exist(1) Then
+'				logPass "Edit User Page has been launched successfully"
+'			End If
+		End If
 End Function
 
-'#  FunctionName : EditUserDetails
+''#  FunctionName : EditUserDetails
 Public Function EditUserDetails(userRole,userGroupArray())
 		If Browser("AddEditUser").Page("AddEditUser").Exist(1) Then
-		'Enter User Information
-			Browser("AddEditUser").Page("AddEditUser").UDF_Init			
-			Browser("AddEditUser").Page("AddEditUser").WebEdit("UserFirstName").UDF_SetValue DataTable.Value("EditUserFirstName", "USERDATA")
-			Browser("AddEditUser").Page("AddEditUser").WebEdit("UserLastName").UDF_SetValue DataTable.Value("EditUserLastName","USERDATA")
-			Browser("AddEditUser").Page("AddEditUser").WebEdit("TxtEmail").UDF_SetValue DataTable.Value("EditUserEmailID","USERDATA")
-			Browser("AddEditUser").Page("AddEditUser").WebEdit("CAID").UDF_SetValue DataTable.Value("EditCAID","USERDATA")	   
+		'Enter User Information			
+			Browser("AddEditUser").Page("AddEditUser").WebEdit("UserFirstName").Set "testedit"
+			Browser("AddEditUser").Page("AddEditUser").WebEdit("UserLastName").Set "dataedit"
+			Browser("AddEditUser").Page("AddEditUser").WebEdit("TxtEmail").Set "c@m.com"
+			Browser("AddEditUser").Page("AddEditUser").WebEdit("CAID").Set "TESTCAID"
 		'List Box to select JobRole if not Empty
 			If userRole<>"" Then
 				Browser("AddEditUser").Page("AddEditUser").WebEdit("txtJobRole").Click
@@ -173,7 +178,7 @@ Public Function EditUserDetails(userRole,userGroupArray())
 					Browser("AddEditUser").Page("AddEditUser").WebButton(">").Click
 					count1 = Browser("AddEditUser").Page("AddEditUser").WebList("LstAssignedGroups").GetROProperty("items count")
 					If  Browser("AddEditUser").Page("AddEditUser").WebList("LstAssignedGroups").GetItem(count1) = group Then
-						Reporter.ReportEvent micPass,"SELECTED USER GROUP", "Selected User Group has been added successfully"
+						logPass "SELECTED USER GROUP - Selected User Group has been added successfully"
 					End If
 				Next
 			End If
@@ -181,24 +186,22 @@ Public Function EditUserDetails(userRole,userGroupArray())
 		'Check whether edit user has given any errors or not
 			If Dialog("text:=Message from webpage").Exist(10) Then
 				chdObj = Dialog("text:=Message from webpage").ChildObjects
-				ERR_MSG = chdObj(2).GetRoProperty("text")
-				FUNC_EXE_STATUS = False
-				Reporter.ReportEvent micFail, "EDIT USER DETAILS", "Err msg" & ERR_MSG
+				ERR_MSG = chdObj(2).GetRoProperty("text")				
+				logFail  "EDIT USER DETAILS" & ERR_MSG
 				Exit Function
 			End If
 		Else
-			Reporter.ReportEvent micFail, "Edit User", "Edit User Button is either unavailable or not in enabled state"
+			logFail "Edit User - Edit User Button is either unavailable or not in enabled state"
 		End If	
 End Function
 
 '#  FunctionName : EditUserLocation
 Public Function EditUserLocation(setUserLocation)
-   	Browser("AddEditUser").Page("AddEditUser").Link("Tab_Locations").UDF_Click
+   	Browser("AddEditUser").Page("AddEditUser").Link("Tab_Locations").Click
 		isFound = False
 		If Browser("AddEditUser").Page("AddEditUser").WebElement("innertext:="& setUserLocation,"index:=0").Exist(1) Then
-			isFound = True
-			Browser("AddEditUser").Page("AddEditUser").WebTable("text:="&setUserLocation).Highlight
-			Browser("AddEditUser").Page("AddEditUser").WebTable("text:="&setUserLocation).WebCheckBox("index:=0").UDF_Click
+			isFound = True			
+			Browser("AddEditUser").Page("AddEditUser").WebTable("text:="&setUserLocation).WebCheckBox("index:=0").Click
 		Else
 			Set imgObj = Description.Create
 			imgObj("micclass").Value = "Image"
@@ -224,71 +227,69 @@ Public Function EditUserLocation(setUserLocation)
 					Set myObj = Browser("AddEditUser").Page("AddEditUser").Image("alt:=" & imgtext)
 					myObj.Click
 					If myWebElement.Exist(1)Then
-							Browser("AddEditUser").Page("AddEditUser").WebTable("text:="&setUserLocation).WebCheckBox("index:=0").UDF_Click
+							Browser("AddEditUser").Page("AddEditUser").WebTable("text:="&setUserLocation).WebCheckBox("index:=0").Click
 							isFound = True
 							Exit For
 					End If
 					If Err.Number = -2147220989 Then
-							Reporter.ReportEvent micFail, "Treeview contains duplicate Objects",imgtext
+							logFail "Treeview contains duplicate Objects" &imgtext
 					End If
 			Next
 		End If
 		If isFound Then
-			Browser("AddEditUser").Page("AddEditUser").Link("SaveUser").UDF_Click
+			Browser("AddEditUser").Page("AddEditUser").Link("SaveUser").Click
 			If Dialog("text:=Message from webpage").Exist Then
-				Set chdItems  = Dialog("text:=Message from webpage").ChildObjects
+				logFail "Failed edit user saving"
+				'Set chdItems  = Dialog("text:=Message from webpage").ChildObjects
+			Else
+				CustomSync Browser("Smart Lobby").Page("Smart Lobby"), False, "Saved User Data"
+				logPass "EditUser Location - Location has been edited successfully"
 			End If
-			Browser("Smart Lobby").Page("Smart Lobby").UDF_Init
-			Reporter.ReportEvent micPass, "EditUser Location", "Location has been edited successfully"
 		Else
-			FUNC_EXE_STATUS = False
-			Reporter.ReportEvent micFail, "Edit USer Location", "Requested Location not Found"
+			logFail "Edit USer Location - Requested Location not Found"
 		End If
 End Function
 
-'#  FunctionName :  Navigate_UserManagerPageTabs
-Public Function Navigate_UserManagerPageTabs(userManagerTabs)
-		Select Case(userManagerTabs)
-			Case USERMANAGER_USERS
-				Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").Link("Tab_Users").UDF_Click
-			Case USERMANAGER_ACCESSADMIN
-				Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").Link("Tab_Users").UDF_Click
-			End Select
+Public Function searchInUserManager()
+	Browser("Smart Lobby").Page("Smart Lobby").Image("Users Manager").Click
+	Select Case retrieveFromCache("DT_TabOption")	
+		Case TAB_USERS
+			Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").WebEdit("FName_Users").Set "Text1"
+			Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").WebEdit("LName_Users").Set "Text2"
+		Case TAB_ACCESSADMIN
+			Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").Link("Tab_AccessAdmin").Click
+			Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").WebEdit("Email_AccessAdmin").Set "Text3"
+			Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").WebEdit("CAIID_AccessAdmin").Set 
+			Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").WebEdit("FirstName_AccessAdmin").Set
+			Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").WebEdit("LastName_AccessAdmin").Set	
+	End Select
+	Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").WebButton("Search").Click
 End Function
 
-'#  FunctionName : VerifyUserData
-'######################################################################
-Public Function VerifyUserData(userWorkFlow)
-   Set DESC_OBJ = Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").WbfGrid("UserDataGrid")
-	   rCount = DESC_OBJ.RowCount
-	   cCount = DESC_OBJ.ColumnCount(1)
-		isFound =False
-		Select Case(userWorkFlow)
-			Case USER_WORKFLOW_ADDUSER
-				For i=2 to rCount
-					If UCASE(DESC_OBJ.GetCellData(i,1)) = UCASE(DataTable.Value("UserFirstName", "USERDATA") & " " & DataTable.Value("UserLastName","USERDATA")) AND _
-						DateDiff("n", FormatDateTime(DESC_OBJ.GetCellData(i,3)),FormatDateTime(DataTable.Value("DateAdded","USERDATA"))) <5Then
-						DESC_OBJ.Object.Rows(i-1).Click
-						'Msgbox "Pass"
-						isFound = True
-						Exit For
-					End If
-				Next
-			Case USER_WORKFLOW_EDITUSER
-				For i=2 to rCount
-					If UCASE(DESC_OBJ.GetCellData(i,1)) = UCASE(DataTable.Value("EditUserFirstName", "USERDATA") & " " & DataTable.Value("EditUserLastName","USERDATA")) Then
-						DESC_OBJ.Object.Rows(i-1).Click
-						'Msgbox "Pass"
-						isFound = True
-						Exit For
-					End If
-				Next
-		End Select
-		If isFound =False Then
-			Reporter.ReportEvent micFail, "User Validation", "User Validation Failed"
-		End If	
-End Function
-'##############################################################
+'################################################
+'Function Name : Check_And_AddUser
+' # Purpose: To Add new user with the define role
+'################################################
+'Public Function checkAndAddUser(userFirstName, userLastName)
+'   Browser("Smart Lobby").Page("Smart Lobby").Image("Users Manager").Click
+'   Set DESC_OBJ = Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_UserManager").WbfGrid("UserDataGrid")
+'	rCount = DESC_OBJ.RowCount
+'	cCount = DESC_OBJ.ColumnCount(1)
+'	isFound =False
+'	For i=2 to rCount
+'		record_Fullname = DESC_OBJ.GetCellData(i,1)
+'		If  record_Fullname = userFirstName & " " & userLastName Then
+'			isFound =True
+'			Exit For
+'		End If
+'	Next
+'	If isFound = False Then
+'		'To Do - Check workflows and add functionality accordingly
+'		Call addUser()
+'	End If
+'End Function
+'
 
 
-
+''#  FunctionName : VerifyUserData
+''######################################################################
