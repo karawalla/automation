@@ -1,10 +1,7 @@
 ﻿'Test Data
-<<<<<<< HEAD
-DataTable.ImportSheet "WorkFlowAppointments.xls"
-=======
 DataTable.Import "WorkFlowAppointments.xls"
 DataTable.SetCurrentRow Environment.Value("TestIteration")
->>>>>>> 1499705f16f6d6412f5f5c2ab720d9213185821d
+
 Init()
 'launchScheduler
 'url = "http://qaweb2.ncr.com/SSMPortalBOA_Trunk/Login.aspx"
@@ -79,11 +76,7 @@ setCurrentWorkFlow workFlow
 setFollowupType DataTable.Value("AppointmentType")
 serviceComp = DataTable.Value("ServiceComplete")
 followUpScenario =DataTable.Value("FollowUpScenario")
-<<<<<<< HEAD
 toHandOff = DataTable.Value("ToHandOff")
-=======
-toHandOff = DataTable.Value("ToHandOff", Global)
->>>>>>> 1499705f16f6d6412f5f5c2ab720d9213185821d
 toCheckDetails = DataTable.Value("CheckDetails")
 cancelAppt = DataTable.Value("CancelAppointment")
 selectNoShow = DataTable.Value("SelectNoShow")
@@ -197,7 +190,6 @@ endTest
 'If Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_ActivityManager").WebElement("Details").Object.isDisabled Then
 '	Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_ActivityManager").WebTable("webTable_ActivityMonitor").Object.Rows(rValue-1).Click
 'End If
-
 
 
 
