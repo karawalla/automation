@@ -1,0 +1,237 @@
+<HTML><HEAD><TITLE>Add / Edit User</TITLE>
+<META name=GENERATOR content="Microsoft Visual Studio 7.0">
+<META name=CODE_LANGUAGE content=C#>
+<META name=vs_defaultClientScript content=JavaScript>
+<META name=vs_targetSchema content=http://schemas.microsoft.com/intellisense/ie5><LINK rel=stylesheet type=text/css href="css/cvm.css">
+<SCRIPT language=javascript type=text/javascript src="script/AddEditUser.js"></SCRIPT>
+
+<SCRIPT language=javascript type=text/javascript src="script/DataGridAndValidators.js"></SCRIPT>
+
+<SCRIPT language=javascript type=text/javascript src="script/Tree_Extension.js"></SCRIPT>
+
+<SCRIPT language=javascript type=text/javascript>
+		function ShowTabs(ObjBlock,ObjNone,ObjCssassign,Objcssnone)
+		{
+		    document.getElementById(ObjNone).style.display = 'none';
+		    document.getElementById(ObjBlock).style.display = 'block';
+		    document.getElementById(ObjCssassign).className = 'current';
+		    document.getElementById(Objcssnone).className = '';
+		}
+        function AssignValue() 
+        {
+
+            var ddlJRoles=document.getElementById('lb_JobRoles');
+            var lblJobCode=document.getElementById('lblJobCode');
+            var txtJobRole=document.getElementById('txtJobRole');
+            
+            lblJobCode.innerText = ddlJRoles.options[ddlJRoles.selectedIndex].value;
+            txtJobRole.value = ddlJRoles.options[ddlJRoles.selectedIndex].innerText;
+            
+            var hdnJobRole= document.getElementById('hdnJobRole');
+            var hdnJobCode= document.getElementById('hdnJobCode');
+            
+            hdnJobRole.value=ddlJRoles.options[ddlJRoles.selectedIndex].innerText;
+            hdnJobCode.value=ddlJRoles.options[ddlJRoles.selectedIndex].value;
+
+            ddlJRoles.style.visibility="hidden";
+        }
+        function onChanged()
+        {
+         lb_JobCodeVisible.style.display = 'block';          
+          var jRoletr=document.getElementById('lb_JobCodeVisible');
+          jRoletr.style.visibility="visible";
+          var ddlJRoles=document.getElementById('lb_JobRoles');
+          ddlJRoles.style.visibility="visible";
+        }
+    </SCRIPT>
+
+<STYLE type=text/css>
+        .style1
+        {
+            width: 100px;
+        }
+        .style2
+        {
+            width: 97%;
+        }
+    </STYLE>
+</HEAD>
+<BODY class=Fullbody onload=CheckEditOrAdd();updateHdnAssignedGroups(); leftMargin=0 onbeforeunload="" topMargin=0>
+<FORM id=UserList method=post name=UserList action=AddEditUser.aspx _initialAction="AddEditUser.aspx">
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT id=BankingCentersTree_ExpandState type=hidden name=BankingCentersTree_ExpandState> <INPUT id=BankingCentersTree_SelectedNode type=hidden name=BankingCentersTree_SelectedNode> <INPUT id=BankingCentersTree_PopulateLog type=hidden name=BankingCentersTree_PopulateLog> <INPUT id=__VIEWSTATE value=/wEPDwUKLTMzNzI5MzI3Mg9kFgICAQ9kFhYCDw9kFgQCAQ8PZBYCHgdvbmNsaWNrBRVyZXR1cm4gc3ludGF4Q2hlY2soKTtkAgQPD2QWAh8ABRx3aW5kb3cuY2xvc2UoKTtyZXR1cm4gZmFsc2U7ZAITDw9kFgIeBm9uYmx1cgUQY2hlY2tOYW1lKHRoaXMpO2QCFQ8PZBYCHwEFEGNoZWNrTmFtZSh0aGlzKTtkAhcPD2QWAh8BBRFjaGVja0VtYWlsKHRoaXMpO2QCIg9kFgICAQ9kFgJmD2QWAgIBDxBkDxZQZgIBAgICAwIEAgUCBgIHAggCCQIKAgsCDAINAg4CDwIQAhECEgITAhQCFQIWAhcCGAIZAhoCGwIcAh0CHgIfAiACIQIiAiMCJAIlAiYCJwIoAikCKgIrAiwCLQIuAi8CMAIxAjICMwI0AjUCNgI3AjgCOQI6AjsCPAI9Aj4CPwJAAkECQgJDAkQCRQJGAkcCSAJJAkoCSwJMAk0CTgJPFlAQBR5BbmFseXN0IEktU3lzdGVtL0RhdGEgU2VjdXJpdHkFBVRSMDczZxAFEUFzc2lzdGFudCBNYW5hZ2VyBQVSTTAxOWcQBRtBc3Npc3RhbnQgTWFuYWdlciBBc3NvY2lhdGUFBVJNMDI0ZxAFCUFzc29jaWF0ZQUFQ0QwMjFnEAUYQmFua2luZyBDZW50ZXIgTWFuYWdlciBJBQVSTTAwMWcQBRlCYW5raW5nIENlbnRlciBNYW5hZ2VyIElJBQVSTTAwMmcQBRpCYW5raW5nIENlbnRlciBNYW5hZ2VyIElJSQUFUk0wMDNnEAUaQmFua2luZyBDdHIgU21hbGwgQnVzIFNwZWMFBVJTNjA5ZxAFFkJ1cyBCYW5raW5nIE1hcmtldCBNZ3IFBUJCMDAxZxAFGkJ1c2luZXNzIFN1cHBvcnQgRXhlY3V0aXZlBQVBTzAwNmcQBRtCdXNpbmVzcyBTdXBwb3J0IE1hbmFnZXIgSUkFBUFPMDA0ZxAFGkNERyBCdXMgQmFua2luZyBDbGllbnQgTWdyBQVCQjEwOGcQBR1DREcgQnVzIEJhbmtpbmcgU3IgQ2xpZW50IE1ncgUFQkIxMDZnEAUOQ0xQIEFzc29jaWF0ZXMFBVJNMDIyZxAFGkNvbW11bml0eSBCYW5rIEV4ZWN1dGl2ZSBJBQVSTTAxN2cQBRtDb21tdW5pdHkgQmFuayBFeGVjdXRpdmUgSUkFBVJNMDE4ZxAFGUNvbnN1bWVyIExEUCAoU2FsZXMgTWdtdCkFBVJNMDMxZxAFGUNvbnN1bWVyIE1hcmtldCBFeGVjdXRpdmUFBVJYMDExZxAFF0NvbnN1bWVyIE1hcmtldCBNYW5hZ2VyBQVSTTAwNGcQBRZDb25zdW1lciBTZW5pb3IgTGVuZGVyBQVEVTE0MWcQBRtDb250YWN0IENlbnRlciBUZWFtIE1hbmFnZXIFBUNTNTAzZxAFCkNvbnRyYWN0b3IFBVlaMDIwZxAFGEN1c3QgU2VydiBTYWxlc1RlYW0gTGVhZAUFQ0QwMjBnEAUZQ3VzdCBTZXJ2IFNwZWNpYWxpc3QvTlMmUwUFQ0QwMDlnEAUbQ3VzdG9tZXIgRXhwIEV4ZWN1dGlvbiBFeGVjBQVSWDA1M2cQBR1DdXN0b21lciBFeHBlcmllbmNlIEV4ZWN1dGl2ZQUFUlgwNDdnEAUbQ3VzdG9tZXIgRXhwZXJpZW5jZSBNYW5hZ2VyBQVSWDA0OWcQBRtDdXN0b21lciBSZWxhdGlvbnNoaXAgTWdyIEkFBU9LMjA1ZxAFHUN1c3RvbWVyIFN1cHBvcnQgVW5pdCBNYW5hZ2VyBQVDUzAwMWcQBR1GaW5hbmNpYWwgU29sdXRpb25zIEFkdi1GaWVsZAUFQlEwMjdnEAUbRmluYW5jaWFsIFNvbHV0aW9ucyBBZHZpc29yBQVCUTAxMGcQBRxGaW5hbmNpYWwgU29sdXRpb25zIFRlYW0gTWdyBQVCUTAxMmcQBR1GdWxsIFNlcnZpY2UgTWFya2V0IFNhbGVzIE1ncgUFU0kwMzdnEAUYR3JvdXAgT3BlcmF0aW9ucyBNYW5hZ2VyBQVPTTAxN2cQBRVIZWxwIERlc2sgQ29vcmRpbmF0b3IFBVRINjAxZxAFEExlYWRlciBBc3NvY2lhdGUFBVJNNjAxZxAFFE1hcmtldCBHcm93dGggTGVhZGVyBQVSTTAyNWcQBRpNYXJrZXQgUGVyZm9ybWFuY2UgTWFuYWdlcgUFUk0wMzJnEAUVTW9ydGdhZ2UgTG9hbiBPZmZpY2VyBQVTTTAwOWcQBRhNb3J0Z2FnZSBMb2FuIFNwZWNpYWxpc3QFBVNNMTExZxAFGE5hdGlvbmFsIFNhbGVzIEV4ZWN1dGl2ZQUFV1MzNDRnEAUdTnRsIFNhbGVzIEV4ZWN1dGlvbiBFeGVjdXRpdmUFBVJYMDUyZxAFFU9wZXJhdGlvbnMgQ29uc3VsdGFudAUFT0EwMDZnEAUST3BlcmF0aW9ucyBNYW5hZ2VyBQVPTTAxOWcQBRpPcGVyYXRpb25zIFByb2plY3QgTWFuYWdlcgUFT1kwMTFnEAUPUGVyc29uYWwgQmFua2VyBQVSUzYwMGcQBRlQZXJzb25hbCBCYW5rZXIgQXNzb2NpYXRlBQVSUzYxM2cQBR1QZXJzb25hbCBGaW5hbmNpYWwgU3BlY2lhbGlzdAUFUlMwMjZnEAUYUHJvY2VzcyBEZXNpZ24gRXhlY3V0aXZlBQVORDAwNGcQBRBSZWdpb24gRXhlY3V0aXZlBQVSWDA0NWcQBRtSZWdpb24gT3BlcmF0aW9ucyBFeGVjdXRpdmUFBVJYMDQ4ZxAFE1JlZ2lvbmFsIFNhbGVzIEV4ZWMFBVJYMDU2ZxAFFlJlZ2lvbmFsIFNhbGVzIE1hbmFnZXIFBVJYMDYwZxAFF1JlbGF0aW9uc2hpcCBTcGVjaWFsaXN0BQVTVDAxNmcQBRpTYWxlcyAmIFNlcnZpY2UgU3BlY2lhbGlzdAUFUlM4NjBnEAUcU2FsZXMgYW5kIFN1cHBvcnQgU3BlY2lhbGlzdAUFQ1M1MDRnEAUbU2FsZXMgUGVyZm9ybWFuY2UgRXhlY3V0aXZlBQVTWjAwN2cQBRpTQiBSZWxhdGlvbnNoaXAgU3BlY2lhbGlzdAUFU1QwMTlnEAUZU2VuaW9yIE9wZXJhdGlvbnMgQW5hbHlzdAUFT0EwMjVnEAUcU2VuaW9yIE9wZXJhdGlvbnMgQ29uc3VsdGFudAUFT0EwMzBnEAUWU2VuaW9yIFBlcnNvbmFsIEJhbmtlcgUFUlM2MDFnEAUNU2VuaW9yIFRlbGxlcgUFUlQ2MDFnEAUbU2VydmljZSBEZWxpdmVyeSBDb25zdWx0YW50BQVURjAwM2cQBRpTbSBCdXNpbmVzcyBCYW5rZXIgQ0EgT25seQUFUlMwMjRnEAUVU21hbGwgQnVzaW5lc3MgQmFua2VyBQVSUzAyMmcQBR1TbWFsbCBCdXNpbmVzcyBCYW5rZXIgTWFuYWdlcgUFUlMwMjNnEAUKU3IgQW5hbHlzdAUFT1kwMThnEAUKU3IgQW5hbHlzdAUFVFIwNzZnEAUdU3IgQmFua2luZyBDdHIgU21hbGwgQnVzIFNwZWMFBVJTMDE1ZxAFHFNyIENvbnRhY3QgQ250ciBTdXBwb3J0IFNwZWMFBUNTMDA3ZxAFHFNyIEN1c3QgU2VydiBTcGVjaWFsaXN0L05TJlMFBUNEMDA4ZxAFGFNyIE1vcnRnYWdlIExvYW4gT2ZmaWNlcgUFU00xNzJnEAUZU3IuIEhlbHAgRGVzayBDb29yZGluYXRvcgUFVEg2MDBnEAUMVGVhbSBNYW5hZ2VyBQVDRDAyMmcQBRxUZWxlcGhvbmUgU2FsZXMgVGVhbSBNYW5hZ2VyBQVTVDAwNmcQBQZUZWxsZXIFBVJUNjAwZxAFElRlbGxlciBDb29yZGluYXRvcgUFUlQ2MDJnEAUOVGVsbGVyIE1hbmFnZXIFBVJUNjAzZxAFHFRlbGxlciBPcGVyYXRpb25zIFNwZWNpYWxpc3QFBVJUMDA4ZxAFEFVuaXZlcnNhbCBCYW5rZXIFBVJTMDAyZ2RkAiYPEGQPFg5mAgECAgIDAgQCBQIGAgcCCAIJAgoCCwIMAg0WDhAFFEFjY2VzcyBBZG1pbmlzdHJhdG9yBQIyMGcQBRBCQyBBZG1pbmlzdHJhdG9yBQEyZxAFGUZpbmFuY2lhbCBTZXJ2aWNlIEFkdmlzb3IFAjIyZxAFDEdsb2JhbCBBZG1pbgUBMWcQBQ9Mb2JieSBBc3NvY2lhdGUFAjExZxAFC01MUyBNYW5hZ2VyBQIxM2cQBRhNb3J0Z2FnZSBMb2FuIFNwZWNpYWxpc3QFAjEyZxAFHVBlcnNvbmFsIEZpbmFuY2lhbCBTcGVjaWFsaXN0BQIyM2cQBRJQbGF0Zm9ybSBBc3NvY2lhdGUFAjEwZxAFFlJlZ2lvbmFsIEFkbWluaXN0cmF0b3IFAjE0ZxAFClNCQiBCYW5rZXIFAjIxZxAFIlNtYWxsIEJ1c2luZXNzIFRlbGVzYWxlcyBBc3NvY2lhdGUFAjE3ZxAFGVNtYWxsIEJ1c2luZXNzIFNwZWNpYWxpc3QFAjI0ZxAFHFRlbGVwaG9uZSBTYWxlcyBUZWFtIG1hbmFnZXIFAjE2Z2RkAigPD2QWAh8ABXZNb3ZlT3B0aW9uKGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdMc3RBdmFpbGFibGVHcm91cHMnKSwgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ0xzdEFzc2lnbmVkR3JvdXBzJykpOyByZXR1cm4gZmFsc2U7ZAIqDw9kFgIfAAV2TW92ZU9wdGlvbihkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnTHN0QXNzaWduZWRHcm91cHMnKSwgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ0xzdEF2YWlsYWJsZUdyb3VwcycpKTsgcmV0dXJuIGZhbHNlO2QCNg8PZBYCHwAFzgFNb3ZlU2l0ZXMoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ0xzdEFzc2lnZW5kU2l0ZXMnKSwgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ0xzdFVuYXNzaWdlbmRTaXRlcycpLGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdCdG5Bc3NpZ2VuZFNpdGVzJyksZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ0J0blVuYXNzaWdlbmRTaXRlcycpKTsgcmV0dXJuIGZhbHNlO2QCOA8PZBYCHwAFzgFNb3ZlU2l0ZXMoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ0xzdFVuYXNzaWdlbmRTaXRlcycpLCBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnTHN0QXNzaWdlbmRTaXRlcycpLGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdCdG5VbmFzc2lnZW5kU2l0ZXMnKSxkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnQnRuQXNzaWdlbmRTaXRlcycpKTsgcmV0dXJuIGZhbHNlO2QCPA88KwAJAQAPFgYeDU5ldmVyRXhwYW5kZWRkHgxTZWxlY3RlZE5vZGVkHglMYXN0SW5kZXhmZGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFCmNoa2F1dG9pbXAFEkJhbmtpbmdDZW50ZXJzVHJlZQCzYW09MBo9ifmri3zBBvrV+tt7 type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['UserList'];
+if (!theForm) {
+    theForm = document.UserList;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<SCRIPT type=text/javascript src="/SSMPortalBOA_Trunk/WebResource.axd?d=ZtoeUhaWLHaedjR0cVTtGHdfhaXPJTgmVX4sG9WP1OxKy2ibw_-2qP-kGhxC-UkEgmat573YW2qJ8_g3NpksWVYWw3Q1&amp;t=634648717942430354"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/SSMPortalBOA_Trunk/WebResource.axd?d=KCyCzQ4yV15nUt2xU1zfiU47xiArDrOGRq8atbqajuX2Zfru2mcW00NYuxPxLGLiV9p8tXBvJ8HkNae2wwDG46C0ID01&amp;t=634648717942430354"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+
+    function TreeView_PopulateNodeDoCallBack(context,param) {
+        WebForm_DoCallback(context.data.treeViewID,param,TreeView_ProcessNodeData,context,TreeView_ProcessNodeData,false);
+    }
+var BankingCentersTree_Data = null;//]]>
+</SCRIPT>
+
+<SCRIPT type=text/javascript src="/SSMPortalBOA_Trunk/ScriptResource.axd?d=A69uu0vGHJI6bHT6jZxN5N_9c-milysB3wXsReRCnrLOlf-0bHOoWjuDuZ6-piBgFE9_56Mx9sqEUrlKBiXXIPD_DFpTIxOvdiC3x5_ha0FzKrQOHyrLERUE1AhKlBMwOS9MpMveXUyyMhPl184UMyMSIVb3WnwVz8-_y4Hl31naP_jB0&amp;t=633843014690464367"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/SSMPortalBOA_Trunk/ScriptResource.axd?d=MbZVKG_nLngfFldjL9vxmJSg3NNVkaFAA5YB8ISuaESkAZ_uQyk2ICPzm4WfL3-3X-bkgSeovRI1Q2xocKHrqXEYrCcd-AYCMe8Iv12lSwVhQnHRfm0uR6zfVrdv3iTvFgpm6u1N8fiLMce1SPmhXNMHeMB0B0cVERX266X2fPIR3_zs5A7_84Tt2kXb-MQiict1Xg2&amp;t=633843014690464367"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/SSMPortalBOA_Trunk/ScriptResource.axd?d=OAqGedCDM8v7j-S5oA4mK81Du9TweRLR0i8XRSrAC1RS_9BblM8DlQLSevPkCOWjI4yP7pQlYVpYeRZ5dVHXN6W48f6VNdkjsKRjk7xlOZuac1W-WfAHSxSmHz3jxGvkO--KNyICmBVv9wQ6w0gDOhctrbI1&amp;t=634460707340000000"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/SSMPortalBOA_Trunk/ScriptResource.axd?d=3NF85utcNSBvG87Ft_xSxKW_6EmExVJG5yqBtmRXLykQOhM4lAWvdJjoCz3q25mBpQ8kXdOugFZpD_xJu29n1Tq2Dmci61DqaqMvxnDNDm54hLC5fD7pcR7meHdjKlEz-3c1ehRRW_aHcop71bNOA8jRtc8_lbRw5ySni_HFqA2OaBXu0&amp;t=634460707340000000"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/SSMPortalBOA_Trunk/ScriptResource.axd?d=9dsbTsHQ_vAvHIyPMOzIZY_novzmngud1FxGIwbzYHJrNOhjwQOyKkPdo3JU4FJSOpo6XqYDbM6Y_AQjm5K3hVaazcmdUynoqxE_Y41r4wd1pKdVS3XdosaQ0T79ZEQy_j8QzqMVLfowGRrpoF-mLNPVV8IOkSeE5fGJGSm0khb8zzUSIOJOkDpVo27WGnUr0LFEkQ2&amp;t=634460707340000000"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/SSMPortalBOA_Trunk/ScriptResource.axd?d=NGdCFY_0njTGG9WuqZNz33DoYV03i0KkZAvB60Ypz0rUR5k_mWwLIfProSSQ1B6YT8oDDw_Tv9TufAUrMX7Hd7Wpw3hoKcpaCvXWWC8pz1saoPpRE7s82nk-sH-J-Sa9H4o8eO6HMnqsbMZwH_tD-F1v-DM1&amp;t=634460707340000000"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/SSMPortalBOA_Trunk/ScriptResource.axd?d=meOQ65LGQIBL8NGw97XfW8lhnFUZAYIzRoqQMIMSl76XHntUq6yuXNbbtqjIAolEy1GN_YGTCpCiwp8XcYs4885gL08aAWFAigCl4YndoZURV2IlGu7O9BhuZreeGNXboOsfy-N-GfzvR12yutYLTHuDcqA1&amp;t=634460707340000000"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/SSMPortalBOA_Trunk/ScriptResource.axd?d=aPYrsA-mWzjGzMy-7aULJTgFOx_QfyMYPPbvl4ffaPrOc1MxA19j-UP5P5T3nX0bO5QgNrbyYRprSNo7Ylx9yFcRAe7CkWA6u8OhTllQ7hdVyw8ieLCp2bFvYk5uGTEVeEnc8TQrUBhhzjGzwVSEMRcT6K0NPHcX2D5he-xEtN6zx5qA0&amp;t=634460707340000000"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/SSMPortalBOA_Trunk/ScriptResource.axd?d=NpAqZjQCDhppBGVMD0D-FvAJF0y0X094fwAUoRCfzObnKlc5LrAPvV5nxEXHUn3H3wC1sNc9DrvoOwsDbn96lFHa32wiK5qtgF96u3DMzT0jdFDs-cNP33nn-nYuTX3D1yKfWSsTbi0FDoOBz47DIgWYt7hmyPJBqQs4iFPVNoF6CXw_0&amp;t=634460707340000000"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/SSMPortalBOA_Trunk/ScriptResource.axd?d=TC3cChNvmuexC4iZtrsPZoHdLYnxK619oK7ugE1za8B4FUD8yGxOGC1J_3ga1pKxp8_nIbyIJsH7njjxHtRKy_nMWWiYNw2MssCsP8MnurZJzuWQQyGRkMvSaXrv91UjmuOHABmkQYQW1XvoQw3ypfqOwbnDgbI-6Ax6tYRPEzP7LhKm0&amp;t=634460707340000000"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', document.getElementById('UserList'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tupnl_JobRoles'], [], [], 90);
+//]]>
+</SCRIPT>
+<INPUT id=DefaultLocationId type=hidden name=DefaultLocationId> <INPUT id=hdnJobRole value="Assistant Manager" type=hidden name=hdnJobRole> <INPUT id=hdnJobCode value=RM019 type=hidden name=hdnJobCode> 
+<H1 id=h1>User Details: </H1>
+<DIV id=tab-box>
+<TABLE width="100%">
+<TBODY>
+<TR>
+<TD>
+<DIV id=tabs>
+<UL>
+<LI id=LiUser class=current><A onclick="ShowTabs('divcontent','divlocations','LiUser','LiLocations');" href="#">User Details</A> </LI></UL>
+<UL></UL></DIV></TD>
+<TD align=right><INPUT id=chkautoimp CHECKED type=checkbox name=chkautoimp>Override Details</TD><BR></TR></TBODY></TABLE>
+<DIV id=datawrap>
+<DIV id=tools class=tools>
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="93%">
+<TBODY>
+<TR>
+<TD>
+<DIV id=ActionLinks>
+<UL>
+<LI class=UsrManSaveUser><A id=UsrManSaveUser class=submenu-items onclick="return syntaxCheck();" href="javascript:__doPostBack('UsrManSaveUser','')">Save User</A></LI>
+<LI class=UsrManCloseWindow><A id=UsrManCloseWindow class=submenu-items onclick="window.close();return false;" href="javascript:__doPostBack('UsrManCloseWindow','')">Close</A> </LI></UL></DIV></TD></TR></TBODY></TABLE></DIV>
+<DIV id=divcontent class=type1Box>
+<DIV class=type1Title><SPAN id=lblMemberName><SPAN id=LblMemberName></SPAN></SPAN></DIV>
+<DIV class=type1Content>
+<TABLE border=0 cellSpacing=0 cellPadding=5 width="95%" valign="top">
+<TBODY>
+<TR class=type1TextBlack>
+<TD class=style1>First Name: </TD>
+<TD align=left><INPUT onblur=checkName(this); style="WIDTH: 270px" id=txtFname value=userFirst10190 maxLength=45 name=txtFname> </TD></TR>
+<TR class=type1TextBlack>
+<TD class=style1>Last Name: </TD>
+<TD align=left><INPUT onblur=checkName(this); style="WIDTH: 270px" id=txtLname value=userLAst10190 maxLength=45 name=txtLname> </TD></TR>
+<TR class=type1TextBlack>
+<TD class=style1>Email: </TD>
+<TD align=left><INPUT onblur=checkEmail(this); style="WIDTH: 270px" id=TxtEmail value=ca250111@ncr.com name=TxtEmail> </TD><!--- We need to store the current email, so that we can compare the current email with
+											TxtEmail (entered from user).  We do this in case the currently logged in user
+											has changed his/her information.
+									 ---></TR>
+<TR style="DISPLAY: block" id=trPassword class=type1TextBlack>
+<TD class=style1 width="20%">CAID: </TD>
+<TD width="80%" align=left><INPUT style="WIDTH: 270px" id=TxtPassword value=newUser1190 name=TxtPassword><SPAN id=LblError class=type1Content></SPAN> </TD></TR>
+<TR class=type1TextBlack>
+<TD class=style1 align=left>Job Code: </TD>
+<TD>
+<DIV id=dvJobroles align=left>
+<TABLE border=0 cellSpacing=0 cellPadding=0 width=250 align=left>
+<TBODY>
+<TR class=type1TextBlack>
+<TD style="PADDING-LEFT: 0px; VERTICAL-ALIGN: middle" class=style2 colSpan=2 align=left><INPUT style="BACKGROUND-IMAGE: url(media/sort_desc.gif); WIDTH: 200px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: right 50%; HEIGHT: 25px" id=txtJobRole onclick=onChanged(); value="Assistant Manager" readOnly name=txtJobRole> </TD>
+<TD align=left><SPAN style="BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; BACKGROUND-COLOR: lightgrey; PADDING-LEFT: 5px; WIDTH: 55px; DISPLAY: inline-block; HEIGHT: 20px; COLOR: black; VERTICAL-ALIGN: middle; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid; PADDING-TOP: 1px" id=lblJobCode>RM019</SPAN></TD></TR>
+<TR style="DISPLAY: block; VISIBILITY: visible" id=lb_JobCodeVisible visible="false">
+<TD>
+<DIV style="POSITION: absolute; DISPLAY: none; VISIBILITY: hidden; TOP: 341px; LEFT: 190px" id=pnl_JobRoles zIndex="1000">
+<DIV id=upnl_JobRoles><SELECT style="BORDER-BOTTOM: #336699 1px solid; BORDER-LEFT: #336699 1px solid; WIDTH: 199px; VISIBILITY: hidden; BORDER-TOP: #336699 1px solid; BORDER-RIGHT: #336699 1px solid" id=lb_JobRoles onclick=AssignValue(); size=8 name=lb_JobRoles> <OPTION value=TR073>Analyst I-System/Data Security</OPTION> <OPTION selected value=RM019>Assistant Manager</OPTION> <OPTION value=RM024>Assistant Manager Associate</OPTION> <OPTION value=CD021>Associate</OPTION> <OPTION value=RM001>Banking Center Manager I</OPTION> <OPTION value=RM002>Banking Center Manager II</OPTION> <OPTION value=RM003>Banking Center Manager III</OPTION> <OPTION value=RS609>Banking Ctr Small Bus Spec</OPTION> <OPTION value=BB001>Bus Banking Market Mgr</OPTION> <OPTION value=AO006>Business Support Executive</OPTION> <OPTION value=AO004>Business Support Manager II</OPTION> <OPTION value=BB108>CDG Bus Banking Client Mgr</OPTION> <OPTION value=BB106>CDG Bus Banking Sr Client Mgr</OPTION> <OPTION value=RM022>CLP Associates</OPTION> <OPTION value=RM017>Community Bank Executive I</OPTION> <OPTION value=RM018>Community Bank Executive II</OPTION> <OPTION value=RM031>Consumer LDP (Sales Mgmt)</OPTION> <OPTION value=RX011>Consumer Market Executive</OPTION> <OPTION value=RM004>Consumer Market Manager</OPTION> <OPTION value=DU141>Consumer Senior Lender</OPTION> <OPTION value=CS503>Contact Center Team Manager</OPTION> <OPTION value=YZ020>Contractor</OPTION> <OPTION value=CD020>Cust Serv SalesTeam Lead</OPTION> <OPTION value=CD009>Cust Serv Specialist/NS&amp;S</OPTION> <OPTION value=RX053>Customer Exp Execution Exec</OPTION> <OPTION value=RX047>Customer Experience Executive</OPTION> <OPTION value=RX049>Customer Experience Manager</OPTION> <OPTION value=OK205>Customer Relationship Mgr I</OPTION> <OPTION value=CS001>Customer Support Unit Manager</OPTION> <OPTION value=BQ027>Financial Solutions Adv-Field</OPTION> <OPTION value=BQ010>Financial Solutions Advisor</OPTION> <OPTION value=BQ012>Financial Solutions Team Mgr</OPTION> <OPTION value=SI037>Full Service Market Sales Mgr</OPTION> <OPTION value=OM017>Group Operations Manager</OPTION> <OPTION value=TH601>Help Desk Coordinator</OPTION> <OPTION value=RM601>Leader Associate</OPTION> <OPTION value=RM025>Market Growth Leader</OPTION> <OPTION value=RM032>Market Performance Manager</OPTION> <OPTION value=SM009>Mortgage Loan Officer</OPTION> <OPTION value=SM111>Mortgage Loan Specialist</OPTION> <OPTION value=WS344>National Sales Executive</OPTION> <OPTION value=RX052>Ntl Sales Execution Executive</OPTION> <OPTION value=OA006>Operations Consultant</OPTION> <OPTION value=OM019>Operations Manager</OPTION> <OPTION value=OY011>Operations Project Manager</OPTION> <OPTION value=RS600>Personal Banker</OPTION> <OPTION value=RS613>Personal Banker Associate</OPTION> <OPTION value=RS026>Personal Financial Specialist</OPTION> <OPTION value=ND004>Process Design Executive</OPTION> <OPTION value=RX045>Region Executive</OPTION> <OPTION value=RX048>Region Operations Executive</OPTION> <OPTION value=RX056>Regional Sales Exec</OPTION> <OPTION value=RX060>Regional Sales Manager</OPTION> <OPTION value=ST016>Relationship Specialist</OPTION> <OPTION value=RS860>Sales &amp; Service Specialist</OPTION> <OPTION value=CS504>Sales and Support Specialist</OPTION> <OPTION value=SZ007>Sales Performance Executive</OPTION> <OPTION value=ST019>SB Relationship Specialist</OPTION> <OPTION value=OA025>Senior Operations Analyst</OPTION> <OPTION value=OA030>Senior Operations Consultant</OPTION> <OPTION value=RS601>Senior Personal Banker</OPTION> <OPTION value=RT601>Senior Teller</OPTION> <OPTION value=TF003>Service Delivery Consultant</OPTION> <OPTION value=RS024>Sm Business Banker CA Only</OPTION> <OPTION value=RS022>Small Business Banker</OPTION> <OPTION value=RS023>Small Business Banker Manager</OPTION> <OPTION value=OY018>Sr Analyst</OPTION> <OPTION value=TR076>Sr Analyst</OPTION> <OPTION value=RS015>Sr Banking Ctr Small Bus Spec</OPTION> <OPTION value=CS007>Sr Contact Cntr Support Spec</OPTION> <OPTION value=CD008>Sr Cust Serv Specialist/NS&amp;S</OPTION> <OPTION value=SM172>Sr Mortgage Loan Officer</OPTION> <OPTION value=TH600>Sr. Help Desk Coordinator</OPTION> <OPTION value=CD022>Team Manager</OPTION> <OPTION value=ST006>Telephone Sales Team Manager</OPTION> <OPTION value=RT600>Teller</OPTION> <OPTION value=RT602>Teller Coordinator</OPTION> <OPTION value=RT603>Teller Manager</OPTION> <OPTION value=RT008>Teller Operations Specialist</OPTION> <OPTION value=RS002>Universal Banker</OPTION></SELECT> </DIV></DIV></TD></TR>
+<TR id=trPe>
+<TD></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE>
+<TABLE border=0 cellSpacing=0 cellPadding=0 width=300>
+<TBODY>
+<TR class=type1TextBlack>
+<TD align=middle>Roles </TD>
+<TD align=middle>&nbsp; </TD>
+<TD align=middle>Assigned Roles </TD></TR>
+<TR class=type1TextBlack>
+<TD align=middle><SELECT style="WIDTH: 200px" id=LstAvailableGroups size=4 name=LstAvailableGroups> <OPTION selected value=2>BC Administrator</OPTION> <OPTION value=22>Financial Service Advisor</OPTION> <OPTION value=1>Global Admin</OPTION> <OPTION value=11>Lobby Associate</OPTION> <OPTION value=13>MLS Manager</OPTION> <OPTION value=12>Mortgage Loan Specialist</OPTION> <OPTION value=23>Personal Financial Specialist</OPTION> <OPTION value=10>Platform Associate</OPTION> <OPTION value=14>Regional Administrator</OPTION> <OPTION value=21>SBB Banker</OPTION> <OPTION value=17>Small Business Telesales Associate</OPTION> <OPTION value=24>Small Business Specialist</OPTION> <OPTION value=16>Telephone Sales Team manager</OPTION> </SELECT> </TD>
+<TD align=middle><INPUT id=btnAssignGroup onclick="MoveOption(document.getElementById('LstAvailableGroups'), document.getElementById('LstAssignedGroups')); return false;" value=">" type=submit name=btnAssignGroup><BR><INPUT id=btnRemoveGroup onclick="MoveOption(document.getElementById('LstAssignedGroups'), document.getElementById('LstAvailableGroups')); return false;" value="<" type=submit name=btnRemoveGroup> </TD>
+<TD align=middle><SELECT style="WIDTH: 200px" id=LstAssignedGroups size=4 name=LstAssignedGroups><OPTION value=20>Access Administrator</OPTION></SELECT> </TD></TR></TBODY></TABLE><!--- Hidden element to keep track of the current selected row. (for javascript function selectRow(thisRow) ---><INPUT id=HdnAssignedGroups value="20|Access Administrator" type=hidden name=HdnAssignedGroups> </DIV></DIV>
+<DIV style="DISPLAY: none" id=divlocations class=type1Box>
+<DIV class=type1Title><SPAN id=Span1><SPAN id=Label1></SPAN></SPAN></DIV>
+<DIV class=type1Content>
+<TABLE border=0 cellSpacing=0 cellPadding=5 width="90%" valign="top">
+<TBODY>
+<TR class=type1TextBlack>
+<TD width=100>Default Site:</TD>
+<TD align=left><INPUT style="WIDTH: 328px" id=txtdefaultsite disabled name=txtdefaultsite></TD></TR></TBODY></TABLE>
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="90%">
+<TBODY>
+<TR style="DISPLAY: none" class=type1TextBlack>
+<TD align=middle>Assigned Sites</TD>
+<TD align=middle>&nbsp;</TD>
+<TD align=middle>Unassigned Sites</TD></TR>
+<TR style="DISPLAY: none" class=type1TextBlack>
+<TD align=middle><SELECT style="WIDTH: 200px" id=LstAssigendSites size=10 name=LstAssigendSites></SELECT></TD>
+<TD align=middle><INPUT id=BtnAssigendSites onclick="MoveSites(document.getElementById('LstAssigendSites'), document.getElementById('LstUnassigendSites'),document.getElementById('BtnAssigendSites'),document.getElementById('BtnUnassigendSites')); return false;" value=">" type=submit name=BtnAssigendSites><BR><INPUT id=BtnUnassigendSites onclick="MoveSites(document.getElementById('LstUnassigendSites'), document.getElementById('LstAssigendSites'),document.getElementById('BtnUnassigendSites'),document.getElementById('BtnAssigendSites')); return false;" value="<" type=submit name=BtnUnassigendSites></TD>
+<TD align=middle><SELECT style="WIDTH: 200px" id=LstUnassigendSites size=10 name=LstUnassigendSites></SELECT></TD></TR>
+<TR>
+<TD colSpan=3>
+<DIV style="WIDTH: 100%" class=smallbctree><A href="#BankingCentersTree_SkipLink"><IMG style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" alt="Skip Navigation Links." src="/SSMPortalBOA_Trunk/WebResource.axd?d=sRoC4LoCcT5syTjPfpPsp3OL3m4E1lRhxR3fGwkIjIJoPnAiM3GkwB4hVF-4QSauw-5ygQxAmV8gLZXa3GXJDeGr_K01&amp;t=634648717942430354" width=0 height=0></A>
+<DIV id=BankingCentersTree></DIV><A id=BankingCentersTree_SkipLink></A></DIV></TD></TR></TBODY></TABLE><!--- Hidden element to keep track of the current selected row. (for javascript function selectRow(thisRow) ---><INPUT id=HdnAssingedSite type=hidden name=HdnAssingedSite> <INPUT id=Hdnmaster value=0 type=hidden name=Hdnmaster> </DIV></DIV></DIV><!-- Force tab-box to wrap everything -->
+<DIV style="CLEAR: both"></DIV></DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var BankingCentersTree_ImageArray =  new Array('', '', '', '/SSMPortalBOA_Trunk/WebResource.axd?d=04MTZmy2oYOSY4dt3fSqIuZsLvkLNcbNN2TI6cERGwlG4H1nU2MYSLAcuUrrMNEuz2rJhQtgRNsHypsCGQxjLmWyTilPDrRb7W3dmqGwRGA4qU770&t=634648717942430354', '/SSMPortalBOA_Trunk/WebResource.axd?d=1qDXlb1n8YqYXpbJyHAfvh6KQM7zJGLqSxYgsUXh-_-AWMwU3rLsWGU-HOguElBaQLLmZAHGfexklZrRCeoXdxGbgvQH4wAzmHl69WzDZWWcdjWz0&t=634648717942430354', '/SSMPortalBOA_Trunk/WebResource.axd?d=uw-xIKXQTM-2veljcXhvHUIufuYw1e6WPq9AGq2coi6UOEuWMIR0VyK0ZLdXMBnq9NjcT5KAKr4usOe4GbU0F2-jJnQ-6hPI7pEOWiAb8eH5ehGV0&t=634648717942430354');
+//]]>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+
+WebForm_InitCallback();var BankingCentersTree_Data = new Object();
+BankingCentersTree_Data.images = BankingCentersTree_ImageArray;
+BankingCentersTree_Data.collapseToolTip = "Collapse {0}";
+BankingCentersTree_Data.expandToolTip = "Expand {0}";
+BankingCentersTree_Data.expandState = theForm.elements['BankingCentersTree_ExpandState'];
+BankingCentersTree_Data.selectedNodeID = theForm.elements['BankingCentersTree_SelectedNode'];
+for (var i=0;i<6;i++) {
+var preLoad = new Image();
+if (BankingCentersTree_ImageArray[i].length > 0)
+preLoad.src = BankingCentersTree_ImageArray[i];
+}
+BankingCentersTree_Data.lastIndex = 0;
+BankingCentersTree_Data.populateLog = theForm.elements['BankingCentersTree_PopulateLog'];
+BankingCentersTree_Data.treeViewID = 'BankingCentersTree';
+BankingCentersTree_Data.name = 'BankingCentersTree_Data';
+Sys.Application.initialize();
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.PopupControlBehavior, {"CommitProperty":"value","PopupControlID":"pnl_JobRoles","Position":3,"dynamicServicePath":"/SSMPortalBOA_Trunk/AddEditUser.aspx","id":"pe_JobRoles"}, null, null, $get("txtJobRole"));
+});
+//]]>
+</SCRIPT>
+</FORM></BODY></HTML>

@@ -1,0 +1,61 @@
+<HTML><HEAD><TITLE>Add / Edit User</TITLE>
+<META name=GENERATOR content="Microsoft Visual Studio 7.0">
+<META name=CODE_LANGUAGE content=C#>
+<META name=vs_defaultClientScript content=JavaScript>
+<META name=vs_targetSchema content=http://schemas.microsoft.com/intellisense/ie5><LINK rel=stylesheet type=text/css href="css/cvm.css">
+<SCRIPT language=javascript type=text/javascript src="script/AddEditUser.js"></SCRIPT>
+
+<SCRIPT language=javascript type=text/javascript src="script/DataGridAndValidators.js"></SCRIPT>
+
+<SCRIPT language=javascript type=text/javascript src="script/Tree_Extension.js"></SCRIPT>
+
+<SCRIPT language=javascript type=text/javascript>
+		function ShowTabs(ObjBlock,ObjNone,ObjCssassign,Objcssnone)
+		{
+		    document.getElementById(ObjNone).style.display = 'none';
+		    document.getElementById(ObjBlock).style.display = 'block';
+		    document.getElementById(ObjCssassign).className = 'current';
+		    document.getElementById(Objcssnone).className = '';
+		}
+        function AssignValue() 
+        {
+
+            var ddlJRoles=document.getElementById('lb_JobRoles');
+            var lblJobCode=document.getElementById('lblJobCode');
+            var txtJobRole=document.getElementById('txtJobRole');
+            
+            lblJobCode.innerText = ddlJRoles.options[ddlJRoles.selectedIndex].value;
+            txtJobRole.value = ddlJRoles.options[ddlJRoles.selectedIndex].innerText;
+            
+            var hdnJobRole= document.getElementById('hdnJobRole');
+            var hdnJobCode= document.getElementById('hdnJobCode');
+            
+            hdnJobRole.value=ddlJRoles.options[ddlJRoles.selectedIndex].innerText;
+            hdnJobCode.value=ddlJRoles.options[ddlJRoles.selectedIndex].value;
+
+            ddlJRoles.style.visibility="hidden";
+        }
+        function onChanged()
+        {
+         lb_JobCodeVisible.style.display = 'block';          
+          var jRoletr=document.getElementById('lb_JobCodeVisible');
+          jRoletr.style.visibility="visible";
+          var ddlJRoles=document.getElementById('lb_JobRoles');
+          ddlJRoles.style.visibility="visible";
+        }
+    </SCRIPT>
+
+<STYLE type=text/css>
+        .style1
+        {
+            width: 100px;
+        }
+        .style2
+        {
+            width: 97%;
+        }
+    </STYLE>
+</HEAD>
+<BODY class=Fullbody onload=CheckEditOrAdd();updateHdnAssignedGroups(); leftMargin=0 onbeforeunload="" topMargin=0>
+<FORM id=UserList method=post name=UserList action=AddEditUser.aspx?userid=48267&amp;DefaultLocationId=5124>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT id=BankingCentersTree_ExpandState value=eeeenncnnnnnnnnnnnnnncnnnnncncnnncnncnnnnnnnnnncnnnnnnnnncnnnnnnnnnnncnnnnnnnnnnncnnnnnnnnnnncnnnnnnncnnnnnnnnncnnnnnnncnnnnnnnnnncnnnnnnnnnnncnnnnnnnnncnnnnnnnnnnnncnncnncnnnnnnncnnnnnnnncnnnnnnnnnnnncnnnnnnnncnnnnnnnnncnnnnnnnnncnnnnnnnnnnncnnnnnnncnnnnnnncnnnnnncnnnnnnnnnnncnnncnnnnnnncnnncnnnnnnnncncnnnnnncnnnnnnnncnnnnnnncnnnnnnnnncnnnnnnncnnnnnnnnncnnnnnncnnnnnnnnncnnnnncnnnnnnncnnnnnnnnnnncnnnnnnnnnnnncnncnnnnnnnnnnncnnnnncnnnnnncncnnnnnnnnnncnnnnnncncnncnnnnnncnnnnnnncnnnnnnnnnnnncnncnnnncnncnnnncnnnnnnnnnncncnncnnnnnnnnncnnnnnnnnnnncnnnnnnnncnnnnnnnnncnncnncnnncnnnnnnnnnccnncncnnnnnnnnnncnnnncnnnncnncnnnnnnnnncnnnnnnnnnncnnnnnnnnnncnnnnnnnnnnnnnncnnnnnnnnnncnnnnnnnnncnnnnnnnnncnnnnnnnnnnncnnnnnnnnnnnncncnnnnncnnnnnnnnnnnnncnnnnnnnncnncnnncnnnnnnnnnnnnnncnnnnncnnnnnnnnnncnnnnnnnnncnnnnnnnnnnnncnnnnnnnnnnnnnnncnnnnnnnnncnnncncnnnnnnnnnncnncnnnncnnnnnnncncnnnnnnnncnnnnnnnnnnncnnnnnnncncncnnnnncnncnnnnnnnnncnnncnnnnnnnnncnnnncnnnnnncnnnnncnnnnnnncnncnnnnncnncncnnnnnnnnnncnnnnnnnnnncnnncnnnnnnnnnnncnnncnnnnnncnnnnnncnnnnnncnnnnnnnncnnnnnnnncnnnnncnnnnnnnnnncnnnnnnnncnnnnnnnnnnnncncnnnnncncnnnnnnnnnnncnnncnnnnnnnnnncnncnnnnnnnnnncnnnnnnncnnnnnnnncnnnnncnncnnnnnncncncncnnnncnnnnncnnnnnnnnnnncnnnnncnncncnnnncnncnnnnnncnnnnnnncnnnnnnnnnnncncnnnnnnnnncnnnnnnnnnnnnnncnnnnnnnncnnnnnncnnnnnnnncnnnnnnnncnnnnnnnnnnnncnnnnnnnncnnnncnnnnncnnnncnnnncnnnnnnnnnncnnnnncnnnnnnnncnnnnncnnnnnnncnnnnnnnnnncnnnnncnnncnnnnncnnnncnnnnnnnncnnnnncnnnnnnnnnncnnnnnnnnnnnnncnnnnnnnnnnnncnnnnnnnncnnnccnnnnnnnncnnnnnnnncnnnncnnnnnncnnnnnnnncnnnncnnnnnncnnnnncnnnnnnnncnnnnnnnnncnnnnnnncnnnncnnnnncnnncnnnnnncnnncnnnncncnnncncnnnnnnnnnnncnncnnncnnnnnnnnnncnncncnnnnnnnnnnnnnncnnnnnncnnnncnnnnncnnnnnnnncnnncnnncnnnnnncnncnnnnnnncnnnncnnnncnnnnnnncnnnncnnncnnnnnnnnnnncnnncnnnnnncnnnnnnncnnnnnncnnnnnncnnnnnncnnnnnnnnncnnnnnnncnnnnnnncnnnncnncnnnnnnnnnncnnnnncnncnnnnnnnnncnnnnnnncnnnnncnnnnncnncnnnncnnnncnnnncnnnnnnnncnncnnnnnnnncncnnncnnnnnnnncnnncnnnnnnnnnnncnnnnnnnnnnnncnnnnnnnnnncnncnnnnnnnnnnncnnncncnnnncnnnnnnnnncnnnnnnnnnncnnnnnnnncnncnnnnnnnnncncnncnnnnnnnnncnncnnnncnnnnnnnnnnnncnnncnnnnnccnncnnncnnnnncncnnnncnnnnnnnncnnnnnncnnnnnncnnnncnnnncnnnnnnnnncncncncnnnnnnncnnncnnncnnnnnnncncnncnncnnnnncnncncnnnnnnnnnnncnnnnncnnnnnnncnnnnnncnnnnnncnnnnnncnnnncnnnnnnnnnnnncnncnnncnnncnncnncnnnncnncnnnnnnnnncnnnnnncnnncncnnnnnnnncnnncnnncnnncnncnnnnnnnncnnnnnnncnnncnnncnnnnnncnnnnnncnnnnnncncnnnnnnnnncncncnncnnnncnnnncnnnnnncncnncnnnnnnncnnncnnnnnnncnnnnncncnnnnnnnnnnncnnnnnnncnncnncncnnnnncnnnnncnnnnnnncncnnnnnncnnncnnnnncnnnnnncnnncnnnnnncnnnnncnnnnnncncnnnncnnncnnncnnnncnnnnnnncnnnnnnncnnncnnnnnnncnnnnnnnnnncnnnnncnncnnnnnnnnnncnnnnnnncnnnnnnnncnnnncnncnnncnncccncnccncncccnn type=hidden name=BankingCentersTree_ExpandState> <INPUT id=BankingCentersTree_SelectedNode type=hidden name=BankingCentersTree_SelectedNode> <INPUT id=BankingCentersTree_PopulateLog type=hidden name=BankingCentersTree_PopulateLog></DIV></FORM></BODY></HTML>
