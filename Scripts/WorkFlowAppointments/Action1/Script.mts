@@ -1,28 +1,28 @@
 ﻿'Test Data
-DataTable.ImportSheet "WorkFlowAppointments.xls",1,Global
+DataTable.ImportSheet "WorkFlowAppointments.xls"
 Init()
 'launchScheduler
 'url = "http://qaweb2.ncr.com/SSMPortalBOA_Trunk/Login.aspx"
 
 'schedulerLogin
-loginData = Split(DataTable.Value("LoginData",Global),":")
+loginData = Split(DataTable.Value("LoginData"),":")
 userName = loginData(0)
 password = loginData(1)
 'goToLoginView
-viewName = DataTable.Value("View",Global)
+viewName = DataTable.Value("View")
 
 'selectBranch
-branchName = DataTable.Value("BranchName",Global)
-branchType = DataTable.Value("BranchType",Global)
+branchName = DataTable.Value("BranchName")
+branchType = DataTable.Value("BranchType")
 
 'goToModule
-moduleName = DataTable.Value("Module",Global)
+moduleName = DataTable.Value("Module")
 
 'set workFlow
-workFlow = DataTable.Value("WorkFlow", Global)
+workFlow = DataTable.Value("WorkFlow")
 'Data for selectTopicforDiscussion
-DiscussionTopic1 = DataTable.Value("DiscussionTopic1",Global)
-DiscussionTopic2 = DataTable.Value("DiscussionTopic2",Global)
+DiscussionTopic1 = DataTable.Value("DiscussionTopic1")
+DiscussionTopic2 = DataTable.Value("DiscussionTopic2")
 comments = "TestComments"
 language = "English"
 accType = DataTable.Value("AccType")
@@ -35,11 +35,11 @@ addToDiscussionTopic "DT_AccType", accType
 
 'selectDateTime
 zipCode = "75038"
-dateToSelect = DataTable.Value("SelectDate",Global)
+dateToSelect = DataTable.Value("SelectDate")
 
 'ProvideContactInformation
-firstName = DataTable.Value("FirstName",Global)
-lastName = DataTable.Value("LastName",Global)
+firstName = DataTable.Value("FirstName")
+lastName = DataTable.Value("LastName")
 eMail = "mouliayyala@gmail.com"
 reEnterEmail ="mouliayyala@gmail.com"
 contactNumber = "1234567890"
@@ -71,17 +71,17 @@ setCurrentModule moduleName
 setCurrentWorkFlow workFlow
 
 
-setFollowupType DataTable.Value("AppointmentType",Global)
-serviceComp = DataTable.Value("ServiceComplete",Global)
-followUpScenario =DataTable.Value("FollowUpScenario",Global)
-toHandOff = DataTable.Value("ToHandOff", Global)
-toCheckDetails = DataTable.Value("CheckDetails",Global)
-cancelAppt = DataTable.Value("CancelAppointment",Global)
-selectNoShow = DataTable.Value("SelectNoShow",Global)
-toAssignAssociate	= DataTable.Value("AssignAssociate",Global)
-associateName = DataTable.Value("AssociateName",Global)
-toCancelAfterServiceComplete = DataTable.Value("CheckCancelafterserviceComplete",Global)
-locationtype = DataTable.Value("LocationType",Global)
+setFollowupType DataTable.Value("AppointmentType")
+serviceComp = DataTable.Value("ServiceComplete")
+followUpScenario =DataTable.Value("FollowUpScenario")
+toHandOff = DataTable.Value("ToHandOff")
+toCheckDetails = DataTable.Value("CheckDetails")
+cancelAppt = DataTable.Value("CancelAppointment")
+selectNoShow = DataTable.Value("SelectNoShow")
+toAssignAssociate	= DataTable.Value("AssignAssociate")
+associateName = DataTable.Value("AssociateName")
+toCancelAfterServiceComplete = DataTable.Value("CheckCancelafterserviceComplete")
+locationtype = DataTable.Value("LocationType")
 addToCache "DT_Location",locationtype
 '*************************************************************
 schedulerLogin userName,password

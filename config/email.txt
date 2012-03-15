@@ -1,0 +1,77 @@
+<html><head><style>body, table, form, input, td, th, p, textarea, select
+{
+	font-family: verdana, helvetica, arial;
+	font-size: 12px;
+}
+
+a:hover { color:#FC0; }
+
+.main-panel { color:#FC0; }
+
+.link { color:#FFF; text-decoration:none; }
+.link-failed { color:#F30; text-decoration:none; }
+.buildresults-header { color: #FFF; font-weight: bold; }
+.buildresults-data { color: #9F3; }
+.buildresults-data-failed { color: #F30; }
+
+.stylesection { margin-left: 6px; }
+.header-title { font-size:12px; color:#FFF;background-color:#006; font-weight:bold; padding-bottom:11pt; }
+.header-label { font-weight:bold; }
+.header-data { font-size:11px; color:#000; }
+.header-data-error { color:#000; white-space:pre; }
+
+.section-table { margin-top:10px; }
+.sectionheader { background-color:#006; color:#FFF; }
+.section-data { font-size:9px; color:#000; }
+.section-oddrow { background-color:#F0F7FF; }
+.section-evenrow { background-color:#FFF; }
+.section-error { font-size:9px; color:#F30; white-space:pre; }
+
+.warning { color: darkorange; }
+.error { color:red }
+.pluginLinks { float:right; margin-top:10px; padding:10px; background-color:#000066; color:White }</style></head>
+<body>
+
+<table class="section-table" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="header-title" colspan="2"><test_name> STARTED</td>
+  </tr>
+   <tr>
+      <td class="header-label">
+        <nobr>Project</nobr>
+      </td>
+      <td class="header-data"><project_name></td>
+  </tr>
+  <tr>
+    <td class="header-label">
+      <nobr>Test Description</nobr>
+    </td>
+    <td class="header-data"><description></td>
+  </tr>
+  <tr>
+    <td class="header-label">
+      <nobr>Url</nobr>
+    </td>
+    <td class="header-data"><app_url></td>
+  </tr>
+  <tr>
+      <td class="header-label">
+        <nobr>Executed By</nobr>
+      </td>
+      <td class="header-data"><run_by></td>
+  </tr>
+  <tr>
+      <td class="header-label">
+        <nobr>Date of Run</nobr>
+      </td>
+      <td class="header-data"><run_date></td>
+  </tr>
+</table>
+<hr size="1" width="98%" align="left" color="#888888"/>
+For Full Results for this test (<a href="http://wushw185025-hsf/application/runs/<run_name>">Click Here</a>)<p></p>
+
+For additional Automation related information (<a href="http://wushw185025-hsf/application/runs/<run_name>">Click Here</a>)<p></p>
+
+
+</body></html>
+
