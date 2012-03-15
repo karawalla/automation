@@ -1,5 +1,39 @@
-﻿'Test Data
-DataTable.ImportSheet "C:\SmokeScripts\UserPermissions.xls",1,Global
+﻿setUserLocation = "Arboretum"
+Set imgObj = Description.Create
+imgObj("micclass").Value = "Image"
+imgObj("html tag").Value = "IMG"
+Set chdImg = Browser("AddEditUser").Page("AddEditUser").ChildObjects(imgObj)
+Dim list1()
+Dim tempindex
+tempindex = 0
+For i=0 to chdImg.Count-1
+	temp = chdImg(i).GetRoProperty("alt")
+	If MID(temp,1,6) = "Expand" Then
+		ReDim Preserve list1(tempindex)
+		list1(tempindex) = temp
+		tempindex = tempindex+1
+	End If
+Next
+set myWebElement = Browser("AddEditUser").Page("AddEditUser").WebElement("innertext:=" & setUserLocation,"index:=0")
+For Each imgtext in list1
+	'ADD EXCEPTIONAL STRINGS HERE-STRINGS WHICH CONTAIN SPECIAL CHARs
+	If imgtext = "Expand MEAC CC (CC3 & VC3)  " Then
+		imgtext = "Expand MEAC CC \(CC3 \& VC3\)  "
+	End If
+	Set myObj = Browser("AddEditUser").Page("AddEditUser").Image("alt:=" & imgtext)
+	myObj.Click
+	If myWebElement.Exist(1)Then
+		Browser("AddEditUser").Page("AddEditUser").WebTable("text:="&setUserLocation).WebCheckBox("index:=0").Click
+		isFound = True
+		Exit For
+	End If
+	If Err.Number = -2147220989 Then
+		logFail "Treeview contains duplicate Objects" &imgtext
+	End If
+Next
+
+'Test Data
+DataTable.ImportSheet "C:\automation\Data\UserPermissions.xls",1,Global
 Init()
 
 'schedulerLogin
@@ -199,9 +233,9 @@ Public Function EditUserLocation(setUserLocation)
    	Browser("AddEditUser").Page("AddEditUser").Link("Tab_Locations").Click
 		isFound = False
 		If Browser("AddEditUser").Page("AddEditUser").WebElement("innertext:="& setUserLocation,"index:=0").Exist(1) Then
-			isFound = True			
-			Browser("AddEditUser").Page("AddEditUser").WebTable("text:="&setUserLocation).WebCheckBox("index:=0").Click
-		Else
+'			isFound = True			
+'			Browser("AddEditUser").Page("AddEditUser").WebTable("text:="&setUserLocation).WebCheckBox("index:=0").Click
+'		Else
 			Set imgObj = Description.Create
 			imgObj("micclass").Value = "Image"
 			imgObj("html tag").Value = "IMG"
@@ -292,3 +326,4 @@ End Function
 
 ''#  FunctionName : VerifyUserData
 ''######################################################################
+
