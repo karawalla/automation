@@ -1,0 +1,90 @@
+<HTML><HEAD><TITLE>Smart Lobby</TITLE>
+<SCRIPT language=javascript for=window event=onload>SetFocus()</SCRIPT>
+<LINK rel=stylesheet type=text/css href="css/theme.css"></HEAD>
+<BODY leftMargin=0 topMargin=0>
+<FORM id=LoginForm onsubmit="javascript:return WebForm_OnSubmit();" method=post name=LoginForm action=Login.aspx>
+<DIV><INPUT id=__VIEWSTATE value=/wEPDwUKLTk5NDk1MTg3NmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFCExvZ2luQnRub51vA0dBzCI+cXut9p2sjwh5WHE= type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript src="/SSMPortalBOA_Trunk/WebResource.axd?d=ae4b8zld_57_Zv8hwJS5wcPf-uYdcIBdtCWwhD7XGKy0tt4QdhNtgdeYCYuiuiunMzwwlf-qZnc-5Dp9KtaajNNIo6-eycldZNgVOaGUTXZmgqz50&amp;t=634648717942430354"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</SCRIPT>
+
+<DIV><INPUT id=__EVENTVALIDATION value=/wEWBAKy7ra6BQKS18aDDQLSxeCRDwK5raCZAzumgPrdf37+uR86DNmVfCHiM8Xs type=hidden name=__EVENTVALIDATION> </DIV>
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%" height="100%">
+<TBODY>
+<TR>
+<TD vAlign=center align=middle>
+<TABLE border=0 cellSpacing=0 cellPadding=0 width=274>
+<TBODY>
+<TR>
+<TD><IMG src="media/logon.JPG" width=274 height=143></TD></TR>
+<TR>
+<TD height=95 vAlign=center background=media/logon-tile.GIF align=middle>
+<TABLE border=0 cellSpacing=0 cellPadding=3 width="95%">
+<TBODY>
+<TR>
+<TD style="FONT-FAMILY: arial; COLOR: #fff; FONT-SIZE: 12px; FONT-WEIGHT: bold" width="35%" align=right>Login ID: <SPAN class=red-content>*</SPAN></TD>
+<TD width="65%" align=middle><INPUT style="WIDTH: 159px" id=Email value=masteradmin@ncr.com name=Email><SPAN style="DISPLAY: none; COLOR: red" id=Requiredfieldvalidator1 controltovalidate="Email" errormessage="* Login ID can't be blank" display="Dynamic" initialvalue isvalid="true">* Login ID can't be blank</SPAN> </TD></TR>
+<TR>
+<TD style="FONT-FAMILY: arial; COLOR: #fff; FONT-SIZE: 12px; FONT-WEIGHT: bold" width="35%" align=right>Password: <SPAN class=red-content>*</SPAN></TD>
+<TD width="65%" align=middle><INPUT style="WIDTH: 159px" id=Password value="" type=password name=Password> <SPAN style="DISPLAY: none; COLOR: red" id=Requiredfieldvalidator2 controltovalidate="Password" errormessage="* Password can't be blank." display="Dynamic" initialvalue isvalid="true">* Password can't be blank.</SPAN></TD></TR>
+<TR>
+<TD></TD>
+<TD style="PADDING-RIGHT: 7px" align=right><INPUT style="BORDER-RIGHT-WIDTH: 0px; WIDTH: 64px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 21px; BORDER-LEFT-WIDTH: 0px" id=LoginBtn src="media/login-button.JPG" type=image name=LoginBtn> </TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD><IMG src="media/bottom-cap-logon.JPG" width=274 height=8></TD></TR></TBODY></TABLE><SPAN id=MsgLabel class=red-content></SPAN></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("Requiredfieldvalidator1"), document.getElementById("Requiredfieldvalidator2"));
+//]]>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var Requiredfieldvalidator1 = document.all ? document.all["Requiredfieldvalidator1"] : document.getElementById("Requiredfieldvalidator1");
+Requiredfieldvalidator1.controltovalidate = "Email";
+Requiredfieldvalidator1.errormessage = "* Login ID can\'t be blank";
+Requiredfieldvalidator1.display = "Dynamic";
+Requiredfieldvalidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+Requiredfieldvalidator1.initialvalue = "";
+var Requiredfieldvalidator2 = document.all ? document.all["Requiredfieldvalidator2"] : document.getElementById("Requiredfieldvalidator2");
+Requiredfieldvalidator2.controltovalidate = "Password";
+Requiredfieldvalidator2.errormessage = "* Password can\'t be blank.";
+Requiredfieldvalidator2.display = "Dynamic";
+Requiredfieldvalidator2.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+Requiredfieldvalidator2.initialvalue = "";
+//]]>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        //]]>
+</SCRIPT>
+</FORM>
+<SCRIPT language=javascript>
+		function SetFocus()
+		{
+			document.getElementById('Email').focus();
+		}
+		</SCRIPT>
+</BODY></HTML>

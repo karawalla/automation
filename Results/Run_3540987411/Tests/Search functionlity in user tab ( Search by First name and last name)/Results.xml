@@ -1,0 +1,88 @@
+<testcase>
+  <name>Search functionlity in user tab ( Search by First name and last name)</name>
+  <host>WUSCA250111-A8R</host>
+  <test_description>Search functionlity in user tab ( Search by First name and last name)</test_description>
+  <starttime>3/15/2012 3:37:34 PM</starttime>
+  <step>
+    <description>Opening IE with url http://qaweb2.ncr.com/SSMPortalBOA_Trunk/Login.aspx</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/15/2012 3:37:38 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login Page -  Smart Lobby-LoginPage [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>0_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/15/2012 3:37:38 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin@ncr.com in UserName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>1_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/15/2012 3:37:39 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin in Password [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>2_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/15/2012 3:37:39 PM</timestamp>
+  </step>
+  <step>
+    <description>Smart Lobby Home page launched successfully Smart Lobby [Page] displayed. Validation object, Activity Monitoring [Image] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>3_Smart_Lobby_browser</snap>
+    <timestamp>3/15/2012 3:37:48 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login View Selection Page. Smart Lobby [Page] displayed. Validation object, Frame_User Permissions [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>4_Smart_Lobby_browser</snap>
+    <timestamp>3/15/2012 3:37:51 PM</timestamp>
+  </step>
+  <step>
+    <description>Selecting View:LOBBY</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/15/2012 3:37:51 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to LOBBY Smart Lobby [Page] displayed. Validation object, Frame_ActivityManager [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>5_Smart_Lobby_browser</snap>
+    <timestamp>3/15/2012 3:37:53 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to User Manager Page Frame_UserManager [Frame] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>6_Smart_Lobby_browser</snap>
+    <timestamp>3/15/2012 3:37:56 PM</timestamp>
+  </step>
+  <step>
+    <description>Web Element toggled to HIDE LOCATOR</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>7_Smart_Lobby_browser</snap>
+    <timestamp>3/15/2012 3:37:59 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered userFirst20 in FName_Users [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>8_Smart_Lobby_browser</snap>
+    <timestamp>3/15/2012 3:38:13 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered userLAst20 in LName_Users [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>9_Smart_Lobby_browser</snap>
+    <timestamp>3/15/2012 3:38:14 PM</timestamp>
+  </step>
+</testcase>

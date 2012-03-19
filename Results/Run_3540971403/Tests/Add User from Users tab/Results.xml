@@ -1,0 +1,109 @@
+<testcase>
+  <name>Add User from Users tab</name>
+  <host>WUSCA250111-A8R</host>
+  <test_description>Add User from Users tab</test_description>
+  <starttime>3/15/2012 11:10:46 AM</starttime>
+  <step>
+    <description>Opening IE with url http://qaweb2.ncr.com/SSMPortalBOA_Trunk/Login.aspx</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/15/2012 11:10:49 AM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login Page -  Smart Lobby-LoginPage [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>0_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/15/2012 11:10:49 AM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin@ncr.com in UserName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>1_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/15/2012 11:10:50 AM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin in Password [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>2_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/15/2012 11:10:50 AM</timestamp>
+  </step>
+  <step>
+    <description>Smart Lobby Home page launched successfully Smart Lobby [Page] displayed. Validation object, Activity Monitoring [Image] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>3_Smart_Lobby_browser</snap>
+    <timestamp>3/15/2012 11:11:00 AM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login View Selection Page. Smart Lobby [Page] displayed. Validation object, Frame_User Permissions [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>4_Smart_Lobby_browser</snap>
+    <timestamp>3/15/2012 11:11:02 AM</timestamp>
+  </step>
+  <step>
+    <description>Selecting View:LOBBY</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/15/2012 11:11:02 AM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to LOBBY Smart Lobby [Page] displayed. Validation object, Frame_ActivityManager [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>5_Smart_Lobby_browser</snap>
+    <timestamp>3/15/2012 11:11:05 AM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to User Manager Page Frame_UserManager [Frame] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>6_Smart_Lobby_browser</snap>
+    <timestamp>3/15/2012 11:11:08 AM</timestamp>
+  </step>
+  <step>
+    <description>Add User page launched AddEditUser [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>7_AddEditUser_browser</snap>
+    <timestamp>3/15/2012 11:11:34 AM</timestamp>
+  </step>
+  <step>
+    <description>Entered userFirst10 in UserFirstName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>8_AddEditUser_browser</snap>
+    <timestamp>3/15/2012 11:11:36 AM</timestamp>
+  </step>
+  <step>
+    <description>Entered userLAst10 in UserLastName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>9_AddEditUser_browser</snap>
+    <timestamp>3/15/2012 11:11:37 AM</timestamp>
+  </step>
+  <step>
+    <description>Entered ca250111@ncr.com in TxtEmail [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>10_AddEditUser_browser</snap>
+    <timestamp>3/15/2012 11:11:38 AM</timestamp>
+  </step>
+  <step>
+    <description>Entered newUser1 in CAID [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>11_AddEditUser_browser</snap>
+    <timestamp>3/15/2012 11:11:39 AM</timestamp>
+  </step>
+  <step>
+    <description>Object Action Failure (Selected Assistant Manager from List_JobRoles [WebList]). Error: Cannot identify the specified item of the List_JobRoles object. Confirm that the specified item is included in the object's item collection.</description>
+    <msgstatus>4</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>12_AddEditUser_browser</snap>
+    <timestamp>3/15/2012 11:13:21 AM</timestamp>
+  </step>
+</testcase>

@@ -1,0 +1,19 @@
+<testcase>
+  <name>Edit user in User tab</name>
+  <host>WUSCA250111-A8R</host>
+  <test_description>Add User from Users tab</test_description>
+  <starttime>3/15/2012 9:16:09 PM</starttime>
+  <step>
+    <description>Opening IE with url http://qaweb2.ncr.com/SSMPortalBOA_Trunk/Login.aspx</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/15/2012 9:16:19 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login Page -  Smart Lobby-LoginPage [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>0_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/15/2012 9:16:20 PM</timestamp>
+  </step>
+</testcase>
