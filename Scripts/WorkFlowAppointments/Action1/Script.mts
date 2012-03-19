@@ -1,91 +1,4 @@
-﻿'Test Data
-DataTable.Import "WorkFlowAppointments.xls"
-DataTable.SetCurrentRow Environment.Value("TestIteration")
-
-Init()
-'launchScheduler
-'url = "http://qaweb2.ncr.com/SSMPortalBOA_Trunk/Login.aspx"
-
-'schedulerLogin
-loginData = Split(DataTable.Value("LoginData"),":")
-userName = loginData(0)
-password = loginData(1)
-'goToLoginView
-viewName = DataTable.Value("View")
-
-'selectBranch
-branchName = DataTable.Value("BranchName")
-branchType = DataTable.Value("BranchType")
-
-'goToModule
-moduleName = DataTable.Value("Module")
-
-'set workFlow
-workFlow = DataTable.Value("WorkFlow")
-'Data for selectTopicforDiscussion
-DiscussionTopic1 = DataTable.Value("DiscussionTopic1")
-DiscussionTopic2 = DataTable.Value("DiscussionTopic2")
-comments = "TestComments"
-language = "English"
-accType = DataTable.Value("AccType")
-
-addToDiscussionTopic "DT_Topic1",DiscussionTopic1
-addToDiscussionTopic "DT_Topic2",DiscussionTopic2
-addToDiscussionTopic "DT_Comments", comments
-addToDiscussionTopic "DT_Language", language
-addToDiscussionTopic "DT_AccType", accType
-
-'selectDateTime
-zipCode = "75038"
-dateToSelect = DataTable.Value("SelectDate")
-
-'ProvideContactInformation
-firstName = DataTable.Value("FirstName")
-lastName = DataTable.Value("LastName")
-eMail = "mouliayyala@gmail.com"
-reEnterEmail ="mouliayyala@gmail.com"
-contactNumber = "1234567890"
-existingCustomer = "Yes"
-businessName = "Test"
-partyID ="123"
-platForm = "COIN"
-reminder_Both = "ON"
-reminder_Phone = Empty
-reminder_textMsg = Empty
-
-addToContactInfo "DT_FirstName",firstName
-addToContactInfo "DT_LastName",lastName
-addToContactInfo "DT_Email",eMail
-addToContactInfo "DT_ReEnterEmail",eMail
-addToContactInfo "DT_ContactNumber",contactNumber
-addToContactInfo "DT_ExistingCustomer",existingCustomer
-addToContactInfo "DT_BusinessName",businessName
-addToContactInfo "DT_PartyID",partyID
-addToContactInfo "DT_PlatForm",platForm
-addToContactInfo "DT_Reminder_Both",reminder_Both
-addToContactInfo "DT_Reminder_Phone",reminder_Phone
-addToContactInfo "DT_Reminder_TxtMsg",reminder_textMsg
-addToContactInfo "DT_AccType",accType
-
-
-setCurrentView viewName
-setCurrentModule moduleName
-setCurrentWorkFlow workFlow
-
-
-setFollowupType DataTable.Value("AppointmentType")
-serviceComp = DataTable.Value("ServiceComplete")
-followUpScenario =DataTable.Value("FollowUpScenario")
-toHandOff = DataTable.Value("ToHandOff")
-toCheckDetails = DataTable.Value("CheckDetails")
-cancelAppt = DataTable.Value("CancelAppointment")
-selectNoShow = DataTable.Value("SelectNoShow")
-toAssignAssociate	= DataTable.Value("AssignAssociate")
-associateName = DataTable.Value("AssociateName")
-toCancelAfterServiceComplete = DataTable.Value("CheckCancelafterserviceComplete")
-locationtype = DataTable.Value("LocationType")
-addToCache "DT_Location",locationtype
-'*************************************************************
+﻿Init()
 schedulerLogin userName,password
 goToLoginView viewName
 goToModule moduleName
@@ -181,16 +94,6 @@ If selectNoShow<> "" Then
 	End If
 End If
 endTest
-'##############################################################
-'rValue = retrieveFromCache("DT_RecordNumber")
-'If Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_AppointmentManager").Link("Details").Object.isDisabled Then
-'	Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_AppointmentManager").WbfGrid("ApptDataGrid").Object.Rows(rValue-1).Click
-'End If
-'rValue = retrieveFromCache("DT_RecordNumber")
-'If Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_ActivityManager").WebElement("Details").Object.isDisabled Then
-'	Browser("Smart Lobby").Page("Smart Lobby").Frame("Frame_ActivityManager").WebTable("webTable_ActivityMonitor").Object.Rows(rValue-1).Click
-'End If
-
 
 
 
