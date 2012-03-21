@@ -1,4 +1,5 @@
 ﻿Init()
+
 schedulerLogin userName,password
 goToLoginView viewName
 goToModule moduleName
