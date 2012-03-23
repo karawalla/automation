@@ -1,0 +1,5 @@
+<Tests>
+<Test>Assiging branches to user by editing the user</Test>
+<Test>Edit user in Admin tab</Test>
+<Test>Edit user in User tab</Test>
+</Tests>

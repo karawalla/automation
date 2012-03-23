@@ -1,0 +1,7 @@
+<Tests>
+<Test>Search by CAID in Accessadmin tab</Test>
+<Test>Search by Email  in Accessadmin tab</Test>
+<Test>Search by First name in Accessadmin tab</Test>
+<Test>Search by Second name in Accessadmin tab</Test>
+<Test>Search functionlity in user tab ( Search by First name and last name)</Test>
+</Tests>
