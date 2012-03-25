@@ -1,0 +1,144 @@
+<testcase>
+  <name>Add User from Admin tab</name>
+  <host>WUSCA250111-A8R</host>
+  <test_description>Add User from Admin tab</test_description>
+  <starttime>3/20/2012 12:25:15 PM</starttime>
+  <step>
+    <description>Opening IE with url https://appointments-dev.bankofamerica.com/associates/login.aspx</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/20/2012 12:25:30 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login Page -  Smart Lobby-LoginPage [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>18_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/20/2012 12:25:30 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin@ncr.com in UserName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>19_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/20/2012 12:25:30 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin in Password [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>20_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/20/2012 12:25:31 PM</timestamp>
+  </step>
+  <step>
+    <description>Smart Lobby Home page launched successfully Smart Lobby [Page] displayed. Validation object, Activity Monitoring [Image] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>21_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 12:25:35 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login View Selection Page. Smart Lobby [Page] displayed. Validation object, Frame_User Permissions [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>22_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 12:25:38 PM</timestamp>
+  </step>
+  <step>
+    <description>Selecting View:LOBBY</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/20/2012 12:25:38 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to LOBBY Smart Lobby [Page] displayed. Validation object, Frame_ActivityManager [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>23_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 12:25:40 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to User Manager Page Frame_UserManager [Frame] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>24_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 12:25:43 PM</timestamp>
+  </step>
+  <step>
+    <description>Launched Add User page AddEditUser [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>25_AddEditUser_browser</snap>
+    <timestamp>3/20/2012 12:26:58 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered myUser2 in UserFirstName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>26_AddEditUser_browser</snap>
+    <timestamp>3/20/2012 12:27:24 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered myuserlast2 in UserLastName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>27_AddEditUser_browser</snap>
+    <timestamp>3/20/2012 12:27:48 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered ca250111@ncr.com in TxtEmail [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>28_AddEditUser_browser</snap>
+    <timestamp>3/20/2012 12:27:51 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered QWERTY2 in CAID [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>29_AddEditUser_browser</snap>
+    <timestamp>3/20/2012 12:27:52 PM</timestamp>
+  </step>
+  <step>
+    <description>Selected Associate from List_JobRoles [WebList]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>30_AddEditUser_browser</snap>
+    <timestamp>3/20/2012 12:27:55 PM</timestamp>
+  </step>
+  <step>
+    <description>Selected BC Administrator from LstAvailableGroups [WebList]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>31_AddEditUser_browser</snap>
+    <timestamp>3/20/2012 12:27:59 PM</timestamp>
+  </step>
+  <step>
+    <description>USER GROUP - Selected User Group has been added successfully</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>32_AddEditUser_browser</snap>
+    <timestamp>3/20/2012 12:28:14 PM</timestamp>
+  </step>
+  <step>
+    <description>Add User page successfully closed Smart Lobby [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>33_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 12:28:53 PM</timestamp>
+  </step>
+  <step>
+    <description>AddEdit User Successful</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>34_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 12:28:54 PM</timestamp>
+  </step>
+  <step>
+    <description>Add User -Verified and record exists in application</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>35_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 12:29:01 PM</timestamp>
+  </step>
+</testcase>

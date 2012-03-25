@@ -1,0 +1,82 @@
+<testcase>
+  <name>Add User from Users tab</name>
+  <host>WUSCA250111-A8R</host>
+  <test_description>Add User from Users tab</test_description>
+  <starttime>3/21/2012 10:56:37 AM</starttime>
+  <step>
+    <description>Opening IE with url https://appointments-dev.bankofamerica.com/associates/login.aspx</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/21/2012 10:56:52 AM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login Page -  Smart Lobby-LoginPage [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>0_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/21/2012 10:56:53 AM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin@ncr.com in UserName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>1_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/21/2012 10:56:53 AM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin in Password [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>2_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/21/2012 10:56:53 AM</timestamp>
+  </step>
+  <step>
+    <description>Smart Lobby Home page launched successfully Smart Lobby [Page] displayed. Validation object, Activity Monitoring [Image] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>3_Smart_Lobby_browser</snap>
+    <timestamp>3/21/2012 10:57:03 AM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login View Selection Page. Smart Lobby [Page] displayed. Validation object, Frame_User Permissions [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>4_Smart_Lobby_browser</snap>
+    <timestamp>3/21/2012 10:57:06 AM</timestamp>
+  </step>
+  <step>
+    <description>Selecting View:LOBBY</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/21/2012 10:57:06 AM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to LOBBY Smart Lobby [Page] displayed. Validation object, Frame_ActivityManager [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>5_Smart_Lobby_browser</snap>
+    <timestamp>3/21/2012 10:57:08 AM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to User Manager Page Frame_UserManager [Frame] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>6_Smart_Lobby_browser</snap>
+    <timestamp>3/21/2012 10:57:11 AM</timestamp>
+  </step>
+  <step>
+    <description>User Record already exists</description>
+    <msgstatus>3</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>7_Smart_Lobby_browser</snap>
+    <timestamp>3/21/2012 10:57:28 AM</timestamp>
+  </step>
+  <step>
+    <description>Fatal Error: Add\Edit User tab is not available - Check the application workflow Aborting Test Case.</description>
+    <msgstatus>5</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>8_Smart_Lobby_browser</snap>
+    <timestamp>3/21/2012 10:57:59 AM</timestamp>
+  </step>
+  <endtime>3/21/2012 10:58:02 AM</endtime>
+</testcase>

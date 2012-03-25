@@ -1,0 +1,102 @@
+<testcase>
+  <name>Search by First name in Accessadmin tab</name>
+  <host>WUSCA250111-A8R</host>
+  <test_description>Search by First name in Accessadmin tab</test_description>
+  <starttime>3/20/2012 1:39:22 PM</starttime>
+  <step>
+    <description>Opening IE with url https://appointments-dev.bankofamerica.com/associates/login.aspx</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/20/2012 1:39:34 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login Page -  Smart Lobby-LoginPage [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>35_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/20/2012 1:39:35 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin@ncr.com in UserName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>36_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/20/2012 1:39:35 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin in Password [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>37_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/20/2012 1:39:36 PM</timestamp>
+  </step>
+  <step>
+    <description>Smart Lobby Home page launched successfully Smart Lobby [Page] displayed. Validation object, Activity Monitoring [Image] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>38_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:39:45 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login View Selection Page. Smart Lobby [Page] displayed. Validation object, Frame_User Permissions [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>39_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:39:48 PM</timestamp>
+  </step>
+  <step>
+    <description>Selecting View:LOBBY</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/20/2012 1:39:48 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to LOBBY Smart Lobby [Page] displayed. Validation object, Frame_ActivityManager [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>40_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:39:50 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to User Manager Page Frame_UserManager [Frame] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>41_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:39:53 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered  in Email_AccessAdmin [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>42_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:40:11 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered  in CAIID_AccessAdmin [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>43_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:40:12 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered mytest1 in FirstName_AccessAdmin [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>44_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:40:12 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered  in LastName_AccessAdmin [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>45_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:40:12 PM</timestamp>
+  </step>
+  <step>
+    <description>Search By FirstName - Validation Successful</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>46_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:40:15 PM</timestamp>
+  </step>
+</testcase>

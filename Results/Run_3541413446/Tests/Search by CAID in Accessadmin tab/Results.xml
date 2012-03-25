@@ -1,0 +1,102 @@
+<testcase>
+  <name>Search by CAID in Accessadmin tab</name>
+  <host>WUSCA250111-A8R</host>
+  <test_description>Search by CAID in Accessadmin tab</test_description>
+  <starttime>3/20/2012 1:58:09 PM</starttime>
+  <step>
+    <description>Opening IE with url https://appointments-dev.bankofamerica.com/associates/login.aspx</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/20/2012 1:58:22 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login Page -  Smart Lobby-LoginPage [Page] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>0_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/20/2012 1:58:22 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin@ncr.com in UserName [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>1_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/20/2012 1:58:23 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered masteradmin in Password [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>2_Smart_Lobby-LoginPage_browser</snap>
+    <timestamp>3/20/2012 1:58:23 PM</timestamp>
+  </step>
+  <step>
+    <description>Smart Lobby Home page launched successfully Smart Lobby [Page] displayed. Validation object, Activity Monitoring [Image] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>3_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:58:32 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to Login View Selection Page. Smart Lobby [Page] displayed. Validation object, Frame_User Permissions [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>4_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:58:35 PM</timestamp>
+  </step>
+  <step>
+    <description>Selecting View:PLATFORM</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>3</msgcategory>
+    <timestamp>3/20/2012 1:58:35 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to PLATFORM Smart Lobby [Page] displayed. Validation object, Frame_ActivityManager [Frame] found.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>5_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:58:37 PM</timestamp>
+  </step>
+  <step>
+    <description>Navigated to User Manager Page Frame_UserManager [Frame] displayed.</description>
+    <msgstatus>2</msgstatus>
+    <msgcategory>0</msgcategory>
+    <snap>6_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:58:40 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered  in Email_AccessAdmin [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>7_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:58:59 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered mytest1234 in CAIID_AccessAdmin [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>8_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:58:59 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered  in FirstName_AccessAdmin [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>9_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:59:00 PM</timestamp>
+  </step>
+  <step>
+    <description>Entered  in LastName_AccessAdmin [WebEdit]</description>
+    <msgstatus>1</msgstatus>
+    <msgcategory>1</msgcategory>
+    <snap>10_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:59:00 PM</timestamp>
+  </step>
+  <step>
+    <description>Search By CAID -Validation FailedActualCAID:MYTEST12346and Expected CAID:mytest1234</description>
+    <msgstatus>4</msgstatus>
+    <msgcategory>2</msgcategory>
+    <snap>11_Smart_Lobby_browser</snap>
+    <timestamp>3/20/2012 1:59:03 PM</timestamp>
+  </step>
+</testcase>
