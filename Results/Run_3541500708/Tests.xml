@@ -1,8 +1,0 @@
-<Tests>
-<Test>Assiging branches to user by editing the user</Test>
-<Test>Check whether error message is displayed when a user is created or edited with same CAID</Test>
-<Test>Check whether the error message is displayed when the email id is not given in correct formate (name..@bofa.com like with two special characters consequently  )</Test>
-<Test>Check whether the error message is displayed when the email id is not given in correct formate (name@bofa.com)</Test>
-<Test>Edit user in Admin tab</Test>
-<Test>Edit user in User tab</Test>
-</Tests>
