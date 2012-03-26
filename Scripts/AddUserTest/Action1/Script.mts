@@ -1,52 +1,19 @@
 ﻿Init()
+'Login ot scheduler as master admin
 loginToScheduler userName, password
+
+'go to Lobby View
 goToLobbyView()
+
+'go to user manager page
 goToUserManager()
-assertTableContentNotExists Browser("SmartLobby").Page("SmartLobby").Frame("Frame_UserManager").WbfGrid("UserDataGrid"), "Demo User", 1, "Verifying User exists"
-addNewUser addNewUser
+
+assertUserNotExists "Demo User", "Verifying user does not exist"
+
+addNewUser(addUserData)
+assertTableContentExists Browser("SmartLobby").Page("SmartLobby").Frame("Frame_UserManager").WbfGrid("UserDataGrid"),retrieveFromCache("first name") & " " & retrieveFromCache("last name"), 1, "Verifying User exists"
 endTest()
 
 
-
-'addNewUser(userFormData)
-'assertTableContentByRow "", "", ""
-'assertTableContent tableData
-'assertTableRowCount 1
-'assertTableColumnCount 1
-
-
-
-
-'schedulerLogin userName,password
-'goToLoginView viewName
-'goToModule moduleName
-'selectBranch  branchType, branchName
-'
-''Add User WorkFlow
-'checkAndAddUser
-'
-''Check if Error is Expected or not
-'If retrieveFromCache("DT_UserRecordFound")<> True Then
-'	If trim(UCase(isErrorExpected))="TRUE" Then
-'		isErrorExists = checkCAIDAlreadyExists()
-'		isDialogExists = checkErrorDailogExists()
-'		If isErrorExists Then
-'			logPass "Error Msg :Add Edir Uer - CAID already exists.Please enter another CAID"
-'        ElseIf isDialogExists Then
-'			errText = retrieveFromCache("DT_DailogText")
-'			logPass "Error Msg: "& errText
-'		ElseIf Browser("AddEditUser").Page("AddEditUser").Exist(1) Then
-'			logFatal "Unknown Error - AditEdit user still exists and not Closed."
-'		Else
-'			logFail "No Error Found.Please check the user input Data."
-'		End If
-'	'Else Normal WorkFlow
-'	Else
-'		addToCache "DT_UserRecordFound", False
-'		checkAddEditUserSuccessful
-'		verifyUserRecord
-'	End If
-'End If
-'
 
 
