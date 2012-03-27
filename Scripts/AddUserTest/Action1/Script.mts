@@ -8,10 +8,12 @@ goToLobbyView()
 'go to user manager page
 goToUserManager()
 
+'Verify 
 assertUserNotExists "Demo User", "Verifying user does not exist"
 
 addNewUser(addUserData)
-assertTableContentExists Browser("SmartLobby").Page("SmartLobby").Frame("Frame_UserManager").WbfGrid("UserDataGrid"),retrieveFromCache("first name") & " " & retrieveFromCache("last name"), 1, "Verifying User exists"
+
+assertUserExists retrieveFromCache("new user name")
 endTest()
 
 
