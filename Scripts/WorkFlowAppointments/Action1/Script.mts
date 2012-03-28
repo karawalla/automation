@@ -1,6 +1,6 @@
 ﻿Init()
 
-schedulerLogin userName,password
+loginToScheduler userName,password
 goToLoginView viewName
 goToModule moduleName
 selectBranch  branchType, branchName
