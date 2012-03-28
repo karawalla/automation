@@ -47,27 +47,56 @@ goToModule moduleName
 selectBranch  branchType, branchName
 
 'Add User WorkFlow
-checkAndAddUser
+'checkAndAddUser
+goToAddUser
+addEditUserDetails
+saveUser
 
 'Check if Error is Expected or not
-If retrieveFromCache("DT_UserRecordFound")<> True Then
-	If trim(UCase(isErrorExpected))="TRUE" Then
-		isErrorExists = checkCAIDAlreadyExists()
-		isDialogExists = checkErrorDailogExists()
-		If isErrorExists Then
-			logPass "Error Msg :Add Edir Uer - CAID already exists.Please enter another CAID"
-        ElseIf isDialogExists Then
-			errText = retrieveFromCache("DT_DailogText")
-			logPass "Error Msg: "& errText
-		ElseIf Browser("AddEditUser").Page("AddEditUser").Exist(1) Then
-			logFatal "Unknown Error - AditEdit user still exists and not Closed."
-		Else
-			logFail "No Error Found.Please check the user input Data."
-		End If
-	'Else Normal WorkFlow
+If trim(UCase(isErrorExpected))="TRUE" Then
+	isErrorExists = checkCAIDAlreadyExists()
+	isDialogExists = checkErrorDailogExists()
+	If isErrorExists Then
+		logPass "Error Msg :Add Edir Uer - CAID already exists.Please enter another CAID"
+	ElseIf isDialogExists Then
+		errText = retrieveFromCache("DT_DailogText")
+		logPass "Error Msg: "& errText
+	ElseIf Browser("AddEditUser").Page("AddEditUser").Exist(1) Then
+		logFatal "Unknown Error - AditEdit user still exists and not Closed."
 	Else
-		addToCache "DT_UserRecordFound", False
-		checkAddEditUserSuccessful
-		verifyUserRecord
+		logFail "No Error Found.Please check the user input Data."
 	End If
+Else
+	'Else Normal WorkFlow
+	checkAddEditUserSuccessful
+	verifyUserRecord	
 End If
+
+
+''Check if Error is Expected or not
+'If isEmpty(retrieveFromCache("DT_UserRecordAlreadyExists")) = False Then
+'	If trim(UCase(isErrorExpected))="TRUE" Then
+'		isErrorExists = checkCAIDAlreadyExists()
+'		isDialogExists = checkErrorDailogExists()
+'		If isErrorExists Then
+'			logPass "Error Msg :Add Edir Uer - CAID already exists.Please enter another CAID"
+'        ElseIf isDialogExists Then
+'			errText = retrieveFromCache("DT_DailogText")
+'			logPass "Error Msg: "& errText
+'		ElseIf Browser("AddEditUser").Page("AddEditUser").Exist(1) Then
+'			logFatal "Unknown Error - AditEdit user still exists and not Closed."
+'		Else
+'			logFail "No Error Found.Please check the user input Data."
+'		End If
+'	Else
+'		logFatal "Create User Failed.User Record already exists.Please check input data"
+'	End If
+''Else Normal WorkFlow
+'Else
+'	checkAddEditUserSuccessful
+'	verifyUserRecord
+'	'Empty RunTime Data
+'	addToCache "DT_UserRecordAlreadyExists", Empty
+'End If
+'
+'
