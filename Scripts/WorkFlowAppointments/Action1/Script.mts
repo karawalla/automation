@@ -1,9 +1,12 @@
 ﻿Init()
 
-schedulerLogin userName,password
+loginToScheduler userName,password
 goToLoginView viewName
 goToModule moduleName
 selectBranch  branchType, branchName
+
+performAppointment tdGetApptType()
+
 
 Select Case workFlow 'CURRENT_WORKFLOW
 	Case WORKFLOW_SCHEDULE
@@ -95,7 +98,3 @@ If selectNoShow<> "" Then
 	End If
 End If
 endTest
-
-
-
-

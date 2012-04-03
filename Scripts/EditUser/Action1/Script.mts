@@ -1,78 +1,38 @@
 ﻿'Test Data
-DataTable.ImportSheet "C:\automation\Data\UserPermissions.xls","EditUser",Global
+DataTable.ImportSheet "C:\automation\Data\EditUser.xls",1,Global
 Init()
 
-'schedulerLogin
-loginData = Split(DataTable.Value("LoginData",Global),":")
-userName = loginData(0)
-password = loginData(1)
+enableExcelDataMode
 
-'goToLoginView
-viewName = DataTable.Value("View",Global)
+'schedulerLogin tdGetUserName,tdGetPassword
+'goToLoginView tdGetView
+'goToModule tdGetModule
+'selectBranch  "", tdGetBranchName
 
-'selectBranch
-branchName = DataTable.Value("BranchName",Global)
-'branchType = DataTable.Value("BranchType",Global)
-locationtype = DataTable.Value("LocationType",Global)
+'Add Actual user First & Last Names to Runtime cache
+addToCache "User_First_Name", tdGetActualUserFirstName
+addToCache "User_Last_Name", tdGetActualUserLastName
 
-'goToModule
-moduleName = DataTable.Value("Module",Global)
+schedulerLogin "masteradmin@ncr.com","masteradmin"
+goToLoginView "Lobby"
+goToModule "usermanager"
+selectBranch  "", "Arboretum"
 
-'Actual user Data to get Record
-userFirstName = DataTable.Value("ActualUserFirstName",Global)
-userLastName = DataTable.Value("ActualUserLastName",Global)
-
-'Set Data
-
-setUserFirstName = DataTable.Value("SetUserFirstName",Global)
-setUserLastName = DataTable.Value("SetUserLastName",Global)
-setUserEmailID = DataTable.Value("SetUserEmailID",Global)
-setCaid =DataTable.Value("SetCaid",Global)
-setUserRole = DataTable.Value("SetUserRole",Global)
-setUserGroup = DataTable.Value("SetUserGroup",Global)
-
-addToCache "DT_UserFirstName", DataTable.Value("ActualUserFirstName",Global)
-addToCache "DT_UserLastName", DataTable.Value("ActualUserLastName",Global)
-
-addToUserInfo "DT_UserFirstName",setUserFirstName
-addToUserInfo "DT_UserLastName", setUserLastName
-addToUserInfo "DT_UserEmail", setUserEmailID
-addToUserInfo "DT_UserCAID", setCaid
-addToUserInfo "DT_UserRole" , setUserRole
-addToUserInfo "DT_UserGroup", setUserGroup
-
-tabOption = DataTable.Value("TabOption",Global)
-addToUserInfo "DT_TabOption", tabOption
-
-setCurrentView viewName
-setCurrentModule moduleName
-addToCache "DT_Location",locationtype
-
-edit_UserLocations = DataTable.Value("EditUserLocations",Global)
-edit_UserDetails = DataTable.Value("EditUserDetails",Global)
-
-isErrorExpected = DataTable.Value("IsErrorExpected",Global)
-'*************************************************************
-schedulerLogin userName,password
-goToLoginView viewName
-goToModule moduleName
-selectBranch  branchType, branchName
-
-If Trim(edit_UserDetails)<>"" Then
-	If Trim(UCase(edit_UserDetails)) = "TRUE" Then
-		selectUserRecord userFirstName,userLastName
-		goToEditUser
-		addEditUserDetails
+If Trim(tdGetEditUserDetails)<>"" Then
+	If Trim(UCase(tdGetEditUserDetails)) = "TRUE" Then
+		selectUserRecord tdGetActualUserFirstName,tdGetActualUserLastName		
+		goToEditUser(tdGetTabOption)
+		addEditUserDetails tdGetTabOption,tdGetEditUserInfoDict
 		saveUser
 	End If
 End If
 
-
-If Trim(edit_UserLocations)<>"" Then
-	If Trim(UCase(edit_UserLocations)) = "TRUE" Then
-		set_UserLocations = Array(DataTable.Value("SetUserLocation1",Global),DataTable.Value("SetUserLocation2",Global))		
-		selectUserRecord userFirstName,userLastName
-		goToEditUser
+If Trim(tdGetEditUserLocations)<>"" Then
+	If Trim(UCase(tdGetEditUserLocations)) = "TRUE" Then
+		'set_UserLocations = Array(DataTable.Value("SetUserLocation1",Global),DataTable.Value("SetUserLocation2",Global))
+		set_UserLocations = Array(tdGetEditUserInfoDict.Item("User_Location1"), tdGetEditUserInfoDict.Item("User_Location2"))
+		selectUserRecord tdGetActualUserFirstName,tdGetActualUserLastName
+		goToEditUser(tdGetTabOption)
 		editUserLocation set_UserLocations
 		saveUser
 		checkAddEditUserSuccessful
@@ -89,11 +49,11 @@ If Trim(edit_UserLocations)<>"" Then
 End If
 
 'Check if Error is Expected or not
-If trim(UCase(isErrorExpected))="TRUE" Then
+If trim(UCase(tdGetEditUserInfoDict.Item("IsError_Expected")))="TRUE" Then
 	isErrorExists = checkCAIDAlreadyExists()
 	isDialogExists = checkErrorDailogExists()
 	If isErrorExists Then				
-		logPass "Error Msg :Add Edir User - CAID already exists.Please enter another CAID"			
+		logPass "Error Msg :Add Edir User - CAID already exists.Please enter another CAID"
 	ElseIf isDialogExists Then
 		errText = retrieveFromCache("DT_DailogText")
 		logPass "Error Msg: "& errText
@@ -102,7 +62,11 @@ If trim(UCase(isErrorExpected))="TRUE" Then
 	Else
 		logFail "No Error Found.Please check the user input Data."
 	End If
-ElseIf trim(UCase(isErrorExpected))<>"TRUE" And Trim(UCase(edit_UserLocations)) <> "TRUE" Then
+ElseIf trim(UCase(tdGetEditUserInfoDict.Item("IsError_Expected")))<>"TRUE" And Trim(UCase(tdGetEditUserLocations)) <> "TRUE" Then
 	checkAddEditUserSuccessful
-	verifyUserRecord
+	verifyEditUserRecord tdGetEditUserInfoDict
 End If
+
+
+
+
