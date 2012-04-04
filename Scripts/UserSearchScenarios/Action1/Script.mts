@@ -1,11 +1,11 @@
 ﻿'Test Data
-DataTable.ImportSheet "C:\automation\Data\UserSearchScenarios.xls",1,Global
-Init()
+'DataTable.ImportSheet "C:\automation\Data\UserSearchScenarios.xls",1,Global
 
-schedulerLogin userName,password
-goToLoginView viewName
-goToModule moduleName
-selectBranch  branchType, branchName
+Init()
+schedulerLogin tdGetUserName,tdGetPassword
+goToLoginView tdGetView
+goToModule tdGetModule
+selectBranch  "", tdGetBranchName,tdGetLocationType
 
 searchInUserManager tdGetTabOption
 verifySearchResults tdGetTabOption,tdGetSearchDataDict

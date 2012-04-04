@@ -1,23 +1,14 @@
-﻿
-Init()
-
-'Test Data
+﻿Init()
 'DataTable.ImportSheet "C:\automation\Data\AddUser.xls",1,Global
 
-'Init()
-'schedulerLogin tdGetUserName,tdGetPassword
-'goToLoginView tdGetView
-'goToModule tdGetModule
-'selectBranch  "", tdGetBranchName
-
-schedulerLogin "masteradmin@ncr.com","masteradmin"
-goToLoginView "Lobby"
-goToModule "usermanager"
-selectBranch  "", "Arboretum"
+schedulerLogin tdGetUserName,tdGetPassword
+goToLoginView tdGetView
+goToModule tdGetModule
+selectBranch  "", tdGetBranchName,tdGetLocationType
 
 'Add User WorkFlow
 'checkAndAddUser
-goToAddUser(tdGetTabOption)
+goToAddUser tdGetTabOption
 addEditUserDetails tdGetTabOption,tdGetAddUserInfoDict
 saveUser
 

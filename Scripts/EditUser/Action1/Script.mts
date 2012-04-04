@@ -1,27 +1,20 @@
 ﻿'Test Data
-DataTable.ImportSheet "C:\automation\Data\EditUser.xls",1,Global
+'DataTable.ImportSheet "C:\automation\Data\EditUser.xls",1,Global
+
 Init()
-
-enableExcelDataMode
-
-'schedulerLogin tdGetUserName,tdGetPassword
-'goToLoginView tdGetView
-'goToModule tdGetModule
-'selectBranch  "", tdGetBranchName
+schedulerLogin tdGetUserName,tdGetPassword
+goToLoginView tdGetView
+goToModule tdGetModule
+selectBranch  "", tdGetBranchName,tdGetLocationType
 
 'Add Actual user First & Last Names to Runtime cache
 addToCache "User_First_Name", tdGetActualUserFirstName
 addToCache "User_Last_Name", tdGetActualUserLastName
 
-schedulerLogin "masteradmin@ncr.com","masteradmin"
-goToLoginView "Lobby"
-goToModule "usermanager"
-selectBranch  "", "Arboretum"
-
 If Trim(tdGetEditUserDetails)<>"" Then
 	If Trim(UCase(tdGetEditUserDetails)) = "TRUE" Then
-		selectUserRecord tdGetActualUserFirstName,tdGetActualUserLastName		
-		goToEditUser(tdGetTabOption)
+		selectUserRecord tdGetTabOption,tdGetActualUserFirstName,tdGetActualUserLastName		
+		goToEditUser
 		addEditUserDetails tdGetTabOption,tdGetEditUserInfoDict
 		saveUser
 	End If
@@ -31,13 +24,13 @@ If Trim(tdGetEditUserLocations)<>"" Then
 	If Trim(UCase(tdGetEditUserLocations)) = "TRUE" Then
 		'set_UserLocations = Array(DataTable.Value("SetUserLocation1",Global),DataTable.Value("SetUserLocation2",Global))
 		set_UserLocations = Array(tdGetEditUserInfoDict.Item("User_Location1"), tdGetEditUserInfoDict.Item("User_Location2"))
-		selectUserRecord tdGetActualUserFirstName,tdGetActualUserLastName
-		goToEditUser(tdGetTabOption)
+		selectUserRecord tdGetTabOption,tdGetActualUserFirstName,tdGetActualUserLastName
+		goToEditUser
 		editUserLocation set_UserLocations
 		saveUser
 		checkAddEditUserSuccessful
 		For Each loc in set_UserLocations
-			selectBranch branchType, loc
+			selectBranch  "", loc,tdGetLocationType			
 			goToModule moduleName
 			If Trim(UCase(edit_UserDetails)) = "TRUE" Then
 				selectUserRecord setUserFirstName,setUserLastName 
@@ -66,7 +59,4 @@ ElseIf trim(UCase(tdGetEditUserInfoDict.Item("IsError_Expected")))<>"TRUE" And T
 	checkAddEditUserSuccessful
 	verifyEditUserRecord tdGetEditUserInfoDict
 End If
-
-
-
 
